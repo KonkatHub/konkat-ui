@@ -56,6 +56,9 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "@konkat/konkat-ui-primitives": "^0.0.100"
+    "@konkat/konkat-ui-primitives": "^0.0.100",
+    "class-variance-authority": "^0.6.0",
+    "clsx": "^1.2.1",
+    "tailwind-merge": "^1.13.2"
   }
 }
