@@ -2,15 +2,67 @@
   import Button from '$lib/components/button/Button.svelte';
 </script>
 
-<div class="flex gap-4">
-  <div class="flex flex-col gap-2">
-    <Button size="sm">Default - sm</Button>
-    <Button>Default - md</Button>
-    <Button size="lg">Default - lg</Button>
+<div class="flex flex-col gap-16 py-24">
+  <div class="flex flex-col gap-4">
+    <h1 class="text-4xl text-slate-700">Sizes</h1>
+    <div
+      class="flex h-20 w-full items-center justify-center gap-2 rounded-xl bg-slate-200 px-4 py-16"
+    >
+      <Button size="sm">Button</Button>
+      <Button>Button</Button>
+      <Button size="lg">Button</Button>
+    </div>
   </div>
-  <div class="flex flex-col gap-2">
-    <Button size="sm" variant="destructive">Destructive - sm</Button>
-    <Button variant="destructive">Destructive - md</Button>
-    <Button size="lg" variant="destructive">Destructive - lg</Button>
+  <div class="flex flex-col gap-4">
+    <h1 class="text-4xl text-slate-700">Primary</h1>
+    <div class="flex h-20 w-full items-center justify-center gap-4 rounded-xl bg-white px-4 py-16">
+      <div class="flex flex-col gap-2">
+        <Button>Button</Button>
+        <Button disabled>Button</Button>
+      </div>
+      <div class="flex flex-col gap-2">
+        <Button variant="outline">Button</Button>
+        <Button disabled variant="outline">Button</Button>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-4">
+    <h1 class="text-4xl text-slate-700">Secondary</h1>
+    <div class="flex h-20 w-full items-center justify-center gap-4 rounded-xl bg-white px-4 py-16">
+      <div class="flex flex-col gap-2">
+        <Button theme="secondary">Button</Button>
+        <Button disabled theme="secondary">Button</Button>
+      </div>
+      <div class="flex flex-col gap-2">
+        <Button variant="outline" theme="secondary">Button</Button>
+        <Button disabled variant="outline" theme="secondary">Button</Button>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-4">
+    <h1 class="text-4xl text-slate-700">Accent</h1>
+    <div class="flex h-20 w-full items-center justify-center gap-4 rounded-xl bg-white px-4 py-16">
+      <div class="flex flex-col gap-2">
+        <Button theme="accent">Button</Button>
+        <Button disabled theme="accent">Button</Button>
+      </div>
+      <div class="flex flex-col gap-2">
+        <Button variant="outline" theme="accent">Button</Button>
+        <Button disabled variant="outline" theme="accent">Button</Button>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-4">
+    <h1 class="text-4xl text-slate-700">Destructive</h1>
+    <div class="flex h-20 w-full items-center justify-center gap-4 rounded-xl bg-white px-4 py-16">
+      <div class="flex flex-col gap-2">
+        <Button theme="destructive">Button</Button>
+        <Button disabled theme="destructive">Button</Button>
+      </div>
+      <div class="flex flex-col gap-2">
+        <Button variant="outline" theme="destructive">Button</Button>
+        <Button disabled variant="outline" theme="destructive">Button</Button>
+      </div>
+    </div>
   </div>
 </div>
