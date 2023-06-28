@@ -8,21 +8,22 @@
   export { className as class };
   export let theme: VariantProps<typeof buttonVariants>['theme'] = 'default';
   export let variant: VariantProps<typeof buttonVariants>['variant'] = 'default';
+  export let shape: VariantProps<typeof buttonVariants>['shape'] = 'default';
   export let size: VariantProps<typeof buttonVariants>['size'] = 'default';
 
   type Props = {
     class?: string | null;
     theme?: VariantProps<typeof buttonVariants>['theme'];
     variant?: VariantProps<typeof buttonVariants>['variant'];
+    shape?: VariantProps<typeof buttonVariants>['shape'];
     size?: VariantProps<typeof buttonVariants>['size'];
   };
 
   type $$Props = ButtonProps & Props;
 </script>
 
-<!-- class="rounded bg-purple-800 px-4 py-2 text-purple-100 transition-all hover:bg-purple-900 active:enabled:scale-95 disabled:cursor-not-allowed disabled:bg-purple-800/50 disabled:text-purple-100/50" -->
 <ButtonPrimitive
-  class={cn(buttonVariants({ theme, variant, size, className }))}
+  class={cn(buttonVariants({ theme, variant, shape, size, className }))}
   {...$$restProps}
   on:click
   on:change

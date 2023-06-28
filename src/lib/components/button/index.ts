@@ -4,7 +4,7 @@ export { default as Button } from './Button.svelte';
 
 export const buttonVariants = cva(
   [
-    'inline-flex items-center justify-center rounded-md ring-offset-slate-300 transition-[transform,_background-color]',
+    'inline-flex items-center justify-center gap-2 rounded-md ring-offset-slate-300 transition-[transform,_background-color]',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-400',
     'active:enabled:scale-[98%]',
     'disabled:opacity-50 disabled:cursor-not-allowed',
@@ -41,10 +41,17 @@ export const buttonVariants = cva(
         default: '',
         outline: 'border border-solid',
       },
+      shape: {
+        default: '',
+        pill: 'rounded-full',
+        square: 'aspect-square',
+        circle: 'rounded-full aspect-square',
+      },
       size: {
+        xs: 'h-8 px-2 text-sm',
         sm: 'h-9 px-3',
-        default: 'h-10 py-2 px-4',
-        lg: 'h-11 px-8',
+        default: 'h-10 px-4',
+        lg: 'h-12 px-8 text-lg',
       },
     },
     compoundVariants: [
@@ -91,8 +98,9 @@ export const buttonVariants = cva(
     ],
     defaultVariants: {
       theme: 'default',
-      size: 'default',
       variant: 'default',
+      shape: 'default',
+      size: 'default',
     },
   }
 );
