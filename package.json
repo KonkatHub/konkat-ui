@@ -1,5 +1,5 @@
 {
-  "name": "konkat-ui",
+  "name": "@konkat/konkat-ui",
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev",
@@ -56,6 +56,10 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "@konkat/konkat-ui-primitives": "^0.0.100"
+    "@konkat/konkat-ui-primitives": "^0.0.100",
+    "class-variance-authority": "^0.6.0",
+    "clsx": "^1.2.1",
+    "iconify-icon": "^1.0.8",
+    "tailwind-merge": "^1.13.2"
   }
 }

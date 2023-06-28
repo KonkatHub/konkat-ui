@@ -1,1 +1,1 @@
-// Reexport your entry components here
+export { Button } from './components/button/index.js';
