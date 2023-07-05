@@ -1,18 +1,15 @@
 <script lang="ts">
   import Button from '$lib/components/button/Button.svelte';
+  import Checkbox from '$lib/components/checkbox/Checkbox.svelte';
 </script>
 
 <div class="flex flex-col gap-16 py-24">
   <div class="flex flex-col gap-4">
-    <h1 class="text-4xl text-slate-700">Primary</h1>
+    <h1 class="text-4xl text-slate-700">Checkbox</h1>
     <div class="flex h-20 w-full items-center justify-center gap-4 rounded-xl bg-white px-4 py-16">
       <div class="flex flex-col gap-2">
-        <Button>Button</Button>
-        <Button disabled>Button</Button>
-      </div>
-      <div class="flex flex-col gap-2">
-        <Button variant="outline">Button</Button>
-        <Button disabled variant="outline">Button</Button>
+        <Checkbox>Checkbox</Checkbox>
+        <Checkbox checked disabled>Disabled</Checkbox>
       </div>
     </div>
   </div>
