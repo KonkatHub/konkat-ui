@@ -2,31 +2,42 @@ import { cva } from 'class-variance-authority';
 
 export { default as Checkbox } from './Checkbox.svelte';
 
-export const checkboxVariants = cva([''], {
-  variants: {
-    theme: {
-      default: [
-        'bg-primary text-white',
-        'hover:bg-primary-600',
-        'active:bg-primary-700',
-        'disabled:bg-primary-200 disabled:text-primary-700',
-      ],
-      secondary: [
-        'bg-secondary text-white',
-        'hover:bg-secondary-600',
-        'active:bg-secondary-700',
-        'disabled:bg-secondary-200 disabled:text-secondary-700',
-      ],
+export const boxVariants = cva(
+  ['flex appearance-none items-center justify-center rounded border transition-[background-color]'],
+  {
+    variants: {
+      theme: {
+        primary: [
+          'border-primary-700 text-white',
+          'data-[state=checked]:bg-primary-700 data-[state=checked]:border-primary-700',
+          'disabled:bg-primary-200 disabled:data-[state=checked]:bg-primary-200 disabled:data-[state=checked]:border-primary-200 disabled:border-primary-200 disabled:text-primary-500 disabled:cursor-not-allowed disabled:opacity-50',
+        ],
+        secondary: [
+          'border-secondary text-white',
+          'data-[state=checked]:bg-secondary data-[state=checked]:border-secondary',
+          'disabled:bg-secondary-200 disabled:data-[state=checked]:bg-secondary-200 disabled:data-[state=checked]:border-secondary-200 disabled:border-secondary-200 disabled:text-secondary-500 disabled:cursor-not-allowed disabled:opacity-50',
+        ],
+        accent: [
+          'border-accent text-white',
+          'data-[state=checked]:bg-accent data-[state=checked]:border-accent',
+          'disabled:bg-accent-200 disabled:data-[state=checked]:bg-accent-200 disabled:data-[state=checked]:border-accent-200 disabled:border-accent-200 disabled:text-accent-500 disabled:cursor-not-allowed disabled:opacity-50',
+        ],
+        destructive: [
+          'border-destructive text-white',
+          'data-[state=checked]:bg-destructive data-[state=checked]:border-destructive',
+          'disabled:bg-destructive-200 disabled:data-[state=checked]:bg-destructive-200 disabled:data-[state=checked]:border-destructive-200 disabled:border-destructive-200 disabled:text-destructive-500 disabled:cursor-not-allowed disabled:opacity-50',
+        ],
+      },
+      size: {
+        sm: 'h-4 w-4',
+        md: 'h-5 w-5',
+        lg: 'h-6 w-6',
+        xl: 'h-7 w-7',
+      },
     },
-    size: {
-      xs: 'h-8 px-2 text-sm',
-      sm: 'h-9 px-3',
-      default: 'h-10 px-4',
-      lg: 'h-12 px-8 text-lg',
+    defaultVariants: {
+      theme: 'primary',
+      size: 'md',
     },
-  },
-  defaultVariants: {
-    theme: 'default',
-    size: 'default',
-  },
-});
+  }
+);

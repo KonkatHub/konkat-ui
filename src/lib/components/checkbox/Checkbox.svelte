@@ -1,11 +1,21 @@
 <script lang="ts">
   import { createCheckbox } from '@melt-ui/svelte';
+  import { boxVariants } from '.';
+  import { cn } from '$lib/utils';
+  import type { VariantProps } from 'class-variance-authority';
+
+  let className: string | undefined | null = undefined;
+  export { className as class };
+  export let theme: VariantProps<typeof boxVariants>['theme'] | undefined = undefined;
+  export let size: VariantProps<typeof boxVariants>['size'] | undefined = undefined;
 
   export let checked: boolean | 'indeterminate' = false;
   export let disabled = false;
   export let required = false;
   export let name: string | undefined = undefined;
   export let value: string | undefined = undefined;
+
+  const id = crypto.randomUUID();
 
   const {
     root,
@@ -26,17 +36,22 @@
   checkedStore.subscribe((v) => (checked = v));
 
   $: options.update((o) => ({ ...o, disabled, required, name, value }));
+
+  let iconSize = '24';
+  $: if (size === 'sm') iconSize = '16';
+  $: if (size === 'md') iconSize = '24';
+  $: if (size === 'lg') iconSize = '32';
+  $: if (size === 'xl') iconSize = '48';
 </script>
 
 <div class="flex items-center justify-center">
-  <button
-    {...$root}
-    use:root.action
-    class="flex h-5 w-5 appearance-none items-center justify-center rounded border border-primary-700 text-primary-700 hover:border-primary-500"
-    id="checkbox"
-  >
-    <span
-      class="flex h-full w-full items-center justify-center rounded transition-[background-color] hover:bg-primary-50"
+  <span class="group">
+    <button
+      {...$root}
+      {disabled}
+      class={cn(boxVariants({ theme, size, className }))}
+      use:root.action
+      {id}
     >
       {#if $isIndeterminate}
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -50,10 +65,10 @@
           />
         </svg>
       {/if}
-    </span>
-    <input {...$input} />
-  </button>
-  <label class="pl-2 text-primary-950" for="checkbox">
+      <input {...$input} />
+    </button>
+  </span>
+  <label class="pl-2 {disabled ? 'cursor-not-allowed' : 'cursor-pointer'}" for={id}>
     <slot />
   </label>
 </div>
