@@ -8,10 +8,10 @@
 
 <div class="flex min-h-screen w-screen flex-col text-gray-800">
   <Navbar />
-  <div class="flex flex-1">
+  <div class="flex flex-1 border-y">
     <Naviguation />
     <main
-      class="flex h-max w-full flex-col-reverse gap-4 px-4 sm:flex-row sm:justify-between md:px-8 lg:px-12"
+      class="flex h-max w-full flex-col-reverse gap-4 px-4 py-8 sm:flex-row sm:justify-between md:px-8 lg:px-12"
     >
       <slot />
     </main>

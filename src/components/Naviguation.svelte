@@ -1,5 +1,5 @@
 <!-- TODO: Use drawer menu -->
-<aside class="hidden min-h-full w-1/4 px-8 py-4 sm:block">
+<aside class="hidden min-h-full w-1/4 border-r px-8 py-8 sm:block">
   <nav>
     <ul>
       <li>

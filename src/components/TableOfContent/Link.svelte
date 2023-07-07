@@ -15,7 +15,7 @@
 </script>
 
 {#if link === 'divider'}
-  <div class="my-2 h-0.5 w-full rounded-full bg-slate-400/20" />
+  <div class="block w-full border-b" />
 {:else}
   <li>
     <a class="text-blue-500 underline transition-colors hover:text-blue-800" href={link.href}>

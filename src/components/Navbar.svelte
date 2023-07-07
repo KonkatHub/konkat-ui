@@ -2,14 +2,14 @@
   import Button from '$lib/components/button/Button.svelte';
 </script>
 
-<header class="flex items-center justify-between px-4 py-4 sm:px-8">
+<header class="flex items-center justify-between px-4 py-2 sm:px-8">
   <div>
     <a href="/" class="text-2xl font-bold">
       <h3>Konkat/UI</h3>
     </a>
   </div>
   <div>
-    <Button href="https://github.com/KonkatHub/konkat-ui" target="_blank" shape="square">
+    <Button href="https://github.com/KonkatHub/konkat-ui" target="_blank" size="sm" shape="square">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path
           fill="currentColor"
