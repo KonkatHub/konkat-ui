@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { ButtonPrimitive, type ButtonProps } from '@konkat/konkat-ui-primitives';
-  import { buttonVariants } from './index.js';
+  import { buttonVariants, type ButtonProps } from './index.js';
   import type { VariantProps } from 'class-variance-authority';
   import { cn } from '$lib/utils.js';
 
@@ -11,8 +10,10 @@
   export let shape: VariantProps<typeof buttonVariants>['shape'] = 'default';
   export let size: VariantProps<typeof buttonVariants>['size'] = 'default';
 
+  export let type: ButtonProps['type'] = 'button';
+  export let href: ButtonProps['href'] = undefined;
+
   type Props = {
-    class?: string | null;
     theme?: VariantProps<typeof buttonVariants>['theme'];
     variant?: VariantProps<typeof buttonVariants>['variant'];
     shape?: VariantProps<typeof buttonVariants>['shape'];
@@ -22,7 +23,11 @@
   type $$Props = ButtonProps & Props;
 </script>
 
-<ButtonPrimitive
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<svelte:element
+  this={href ? 'a' : 'button'}
+  type={href ? undefined : type}
+  {href}
   class={cn(buttonVariants({ theme, variant, shape, size, className }))}
   {...$$restProps}
   on:click
@@ -36,4 +41,4 @@
   on:mouseleave
 >
   <slot />
-</ButtonPrimitive>
+</svelte:element>

@@ -56,7 +56,6 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "@konkat/konkat-ui-primitives": "^0.0.100",
     "@melt-ui/svelte": "^0.17.0",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
