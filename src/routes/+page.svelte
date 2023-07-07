@@ -8,6 +8,18 @@
     <h1 class="text-4xl text-slate-700">Checkbox</h1>
     <div class="flex h-max w-full items-center justify-center gap-4 rounded-xl bg-white px-4 py-4">
       <div class="flex flex-col gap-2">
+        <Checkbox disabled theme="primary">Checkbox</Checkbox>
+        <Checkbox disabled theme="secondary">Checkbox</Checkbox>
+        <Checkbox disabled theme="accent">Checkbox</Checkbox>
+        <Checkbox disabled theme="destructive">Checkbox</Checkbox>
+      </div>
+      <div class="flex flex-col gap-2">
+        <Checkbox checked="indeterminate" theme="primary">Checkbox</Checkbox>
+        <Checkbox checked="indeterminate" theme="secondary">Checkbox</Checkbox>
+        <Checkbox checked="indeterminate" theme="accent">Checkbox</Checkbox>
+        <Checkbox checked="indeterminate" theme="destructive">Checkbox</Checkbox>
+      </div>
+      <div class="flex flex-col gap-2">
         <Checkbox checked theme="primary">Checkbox</Checkbox>
         <Checkbox checked theme="secondary">Checkbox</Checkbox>
         <Checkbox checked theme="accent">Checkbox</Checkbox>
