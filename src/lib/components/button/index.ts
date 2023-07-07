@@ -115,6 +115,11 @@ export const buttonVariants = cva(
           'disabled:border-destructive-500 disabled:bg-white disabled:text-destructive-500',
         ],
       },
+      {
+        size: ['xs', 'sm', 'default', 'lg'],
+        shape: ['square', 'circle'],
+        class: 'px-0',
+      },
     ],
     defaultVariants: {
       theme: 'default',
