@@ -1,18 +1,41 @@
 <script lang="ts">
   import Button from '$lib/components/button/Button.svelte';
+  import Checkbox from '$lib/components/checkbox/Checkbox.svelte';
 </script>
 
 <div class="flex flex-col gap-16 py-24">
   <div class="flex flex-col gap-4">
-    <h1 class="text-4xl text-slate-700">Primary</h1>
-    <div class="flex h-20 w-full items-center justify-center gap-4 rounded-xl bg-white px-4 py-16">
+    <h1 class="text-4xl text-slate-700">Checkbox</h1>
+    <div class="flex h-max w-full items-center justify-center gap-4 rounded-xl bg-white px-4 py-4">
       <div class="flex flex-col gap-2">
-        <Button>Button</Button>
-        <Button disabled>Button</Button>
+        <Checkbox disabled theme="primary">Checkbox</Checkbox>
+        <Checkbox disabled theme="secondary">Checkbox</Checkbox>
+        <Checkbox disabled theme="accent">Checkbox</Checkbox>
+        <Checkbox disabled theme="destructive">Checkbox</Checkbox>
       </div>
       <div class="flex flex-col gap-2">
-        <Button variant="outline">Button</Button>
-        <Button disabled variant="outline">Button</Button>
+        <Checkbox checked="indeterminate" theme="primary">Checkbox</Checkbox>
+        <Checkbox checked="indeterminate" theme="secondary">Checkbox</Checkbox>
+        <Checkbox checked="indeterminate" theme="accent">Checkbox</Checkbox>
+        <Checkbox checked="indeterminate" theme="destructive">Checkbox</Checkbox>
+      </div>
+      <div class="flex flex-col gap-2">
+        <Checkbox checked theme="primary">Checkbox</Checkbox>
+        <Checkbox checked theme="secondary">Checkbox</Checkbox>
+        <Checkbox checked theme="accent">Checkbox</Checkbox>
+        <Checkbox checked theme="destructive">Checkbox</Checkbox>
+      </div>
+      <div class="flex flex-col gap-2">
+        <Checkbox>Checkbox</Checkbox>
+        <Checkbox checked>Checkbox</Checkbox>
+        <Checkbox disabled>Checkbox</Checkbox>
+        <Checkbox checked disabled>Checkbox</Checkbox>
+      </div>
+      <div class="flex flex-col gap-2">
+        <Checkbox checked size="sm">Checkbox</Checkbox>
+        <Checkbox checked size="md">Checkbox</Checkbox>
+        <Checkbox checked size="lg">Checkbox</Checkbox>
+        <Checkbox checked size="xl">Checkbox</Checkbox>
       </div>
     </div>
   </div>
