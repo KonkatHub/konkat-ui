@@ -37,8 +37,12 @@
 <Article title="Button">
   <div class="flex flex-col gap-4 py-8">
     <div class="flex gap-2">
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="ghost" disabled>Ghost</Button>
+      <Button theme="base" variant="link">Link</Button>
+      <Button theme="neutral" variant="link">Link</Button>
+      <Button theme="primary" variant="link">Link</Button>
+      <Button theme="secondary" disabled variant="link">Link</Button>
+      <Button theme="accent" variant="link">Link</Button>
+      <Button theme="destructive" variant="link">Link</Button>
     </div>
     <div class="flex gap-2">
       <Button theme="base" variant="ghost">Ghost</Button>

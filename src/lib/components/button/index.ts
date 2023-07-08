@@ -80,6 +80,12 @@ export const buttonVariants = cva(
           'active:bg-opacity-20',
           'disabled:bg-transparent disabled:text-opacity-50 disabled:hover:bg-transparent',
         ],
+        link: [
+          'underline bg-transparent',
+          'hover:bg-transparent',
+          'active:bg-opacity-20',
+          'disabled:bg-transparent disabled:hover:bg-transparenactive:bg-opacity-20',
+        ],
       },
       shape: {
         pill: 'rounded-full',
@@ -131,32 +137,37 @@ export const buttonVariants = cva(
       },
       {
         theme: 'base',
+        variant: 'link',
+        class: 'active:bg-opacity-100',
+      },
+      {
+        theme: 'base',
         variant: 'ghost',
         class: ['hover:bg-opacity-50', 'active:bg-opacity-70'],
       },
       {
         theme: 'neutral',
-        variant: 'ghost',
+        variant: ['ghost', 'link'],
         class: ['text-neutral-700'],
       },
       {
         theme: 'primary',
-        variant: 'ghost',
+        variant: ['ghost', 'link'],
         class: ['text-primary-700'],
       },
       {
         theme: 'secondary',
-        variant: 'ghost',
+        variant: ['ghost', 'link'],
         class: ['text-secondary-700'],
       },
       {
         theme: 'accent',
-        variant: 'ghost',
+        variant: ['ghost', 'link'],
         class: ['text-accent-700'],
       },
       {
         theme: 'destructive',
-        variant: 'ghost',
+        variant: ['ghost', 'link'],
         class: ['text-destructive-700'],
       },
       {
