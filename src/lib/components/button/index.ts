@@ -25,9 +25,9 @@ export const buttonVariants = cva(
     variants: {
       theme: {
         base: [
-          'bg-base-200 text-neutral-800',
-          'hover:bg-base-300',
-          'active:bg-base-400',
+          'bg-base-300 text-neutral-800',
+          'hover:bg-base-400',
+          'active:bg-base-500',
           'focus-visible:outline-neutral-700',
           'disabled:hover:bg-base-200',
         ],

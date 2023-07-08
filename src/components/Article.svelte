@@ -2,7 +2,7 @@
   export let title: string;
 </script>
 
-<article>
+<article class="w-full">
   <h1 class="text-5xl font-bold">{title}</h1>
   <slot />
 </article>

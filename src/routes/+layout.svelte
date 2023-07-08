@@ -3,6 +3,7 @@
   import Navbar from '$components/Navbar.svelte';
   import Naviguation from '$components/Naviguation.svelte';
   import '../app.postcss';
+  import '../onedark-prism.css';
   import 'iconify-icon';
 </script>
 

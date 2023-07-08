@@ -3,6 +3,9 @@
   import Table from '$components/TableOfContent/Table.svelte';
   import type { LinkInfo } from '$components/TableOfContent/Link.svelte';
   import Button from '$lib/components/button/Button.svelte';
+  import Codeblock from '$components/Codeblock.svelte';
+
+  export let data;
 
   const links: LinkInfo[] = [
     {
@@ -36,6 +39,29 @@
 
 <Article title="Button">
   <div class="flex flex-col gap-4 py-8">
+    <Codeblock code={data.buttons} metadata="Svelte">
+      <div class="flex items-center justify-center gap-2 p-4">
+        <Button theme="base">Base</Button>
+        <Button theme="neutral">Neutral</Button>
+        <Button theme="primary">Primary</Button>
+        <Button theme="secondary">Secondary</Button>
+        <Button theme="accent">Accent</Button>
+        <Button theme="destructive">Destructive</Button>
+      </div>
+    </Codeblock>
+    <div class="flex gap-2">
+      <Button theme="base">Base</Button>
+      <Button theme="neutral">Neutral</Button>
+      <Button theme="primary">Primary</Button>
+      <Button theme="secondary">Secondary</Button>
+      <Button theme="accent">Accent</Button>
+      <Button theme="destructive">Destructive</Button>
+    </div>
+    <div class="flex gap-2">
+      <Button variant="outline">Outline</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="link">Link</Button>
+    </div>
     <div class="flex gap-2">
       <Button theme="base" variant="link">Link</Button>
       <Button theme="neutral" variant="link">Link</Button>
