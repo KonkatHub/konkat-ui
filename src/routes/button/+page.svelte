@@ -39,6 +39,7 @@
 
 <Article title="Button">
   <div class="flex flex-col gap-4 py-8">
+    <Codeblock code={data.buttons} metadata="Svelte" />
     <Codeblock code={data.buttons} metadata="Svelte">
       <div class="flex items-center justify-center gap-2 p-4">
         <Button theme="base">Base</Button>

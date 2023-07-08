@@ -11,8 +11,10 @@
   }
 </script>
 
-<div class="flex flex-col rounded-xl border border-base-500">
-  <div class="flex items-center justify-between rounded-t-lg bg-base-400 py-2 pl-4 pr-2 text-sm">
+<div class="flex flex-col">
+  <div
+    class="flex items-center justify-between rounded-t-xl border border-base-500 bg-base-400 py-2 pl-4 pr-2 text-sm"
+  >
     <div class="flex items-center gap-4">
       {#if Array.isArray(metadata)}
         {#if metadata.length === 1}
@@ -35,9 +37,15 @@
     </Button>
   </div>
   {#if $$slots.default}
-    <slot />
+    <div class="border-x border-base-500">
+      <slot />
+    </div>
   {/if}
-  <code class="whitespace-pre-wrap rounded-b-xl bg-base-200 p-4">
+  <code
+    class="whitespace-pre-wrap rounded-b-xl border {$$slots.default
+      ? 'bordor-t'
+      : 'border-t-0'} border-base-500 bg-base-200 p-4"
+  >
     <!-- eslint-disable-next-line svelte/no-at-html-tags -->
     {@html Prism.highlight(code, Prism.languages.svelte, 'svelte')}
   </code>
