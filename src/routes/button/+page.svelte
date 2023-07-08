@@ -2,6 +2,7 @@
   import Article from '$components/Article.svelte';
   import Table from '$components/TableOfContent/Table.svelte';
   import type { LinkInfo } from '$components/TableOfContent/Link.svelte';
+  import Button from '$lib/components/button/Button.svelte';
 
   const links: LinkInfo[] = [
     {
@@ -34,5 +35,37 @@
 </script>
 
 <Article title="Button">
+  <div class="flex flex-col gap-4 py-8">
+    <div class="flex gap-2">
+      <Button>Button</Button>
+      <Button disabled>Button</Button>
+      <Button variant="outline">Button</Button>
+      <Button variant="outline" disabled>Button</Button>
+    </div>
+    <div class="flex gap-2">
+      <Button theme="primary">Button</Button>
+      <Button theme="primary" disabled>Button</Button>
+      <Button theme="primary" variant="outline">Button</Button>
+      <Button theme="primary" variant="outline" disabled>Button</Button>
+    </div>
+    <div class="flex gap-2">
+      <Button theme="secondary">Button</Button>
+      <Button theme="secondary" disabled>Button</Button>
+      <Button theme="secondary" variant="outline">Button</Button>
+      <Button theme="secondary" variant="outline" disabled>Button</Button>
+    </div>
+    <div class="flex gap-2">
+      <Button theme="accent">Button</Button>
+      <Button theme="accent" disabled>Button</Button>
+      <Button theme="accent" variant="outline">Button</Button>
+      <Button theme="accent" variant="outline" disabled>Button</Button>
+    </div>
+    <div class="flex gap-2">
+      <Button theme="destructive">Button</Button>
+      <Button theme="destructive" disabled>Button</Button>
+      <Button theme="destructive" variant="outline">Button</Button>
+      <Button theme="destructive" variant="outline" disabled>Button</Button>
+    </div>
+  </div>
   <Table slot="sidebar" {links} />
 </Article>
