@@ -57,6 +57,7 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
+    "@sveltejs/adapter-node": "^1.2.4",
     "@melt-ui/svelte": "^0.17.0",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",

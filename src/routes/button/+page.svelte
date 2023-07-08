@@ -1,6 +1,5 @@
 <script lang="ts">
   import Article from '$components/Article.svelte';
-  import Table from '$components/TableOfContent/Table.svelte';
   import type { LinkInfo } from '$components/TableOfContent/Link.svelte';
   import Button from '$lib/components/button/Button.svelte';
   import Codeblock from '$components/Codeblock.svelte';
@@ -10,20 +9,41 @@
 
   const links: LinkInfo[] = [
     {
-      href: '#theme',
-      text: 'Theme',
+      href: '#themes',
+      text: 'Themes',
+    },
+    {
+      href: '#variants',
+      text: 'Variants',
     },
     {
       href: '#size',
       text: 'Size',
+    },
+    {
+      href: '#disabled',
+      text: 'Disabled',
+    },
+    {
+      href: '#icons',
+      text: 'Icons',
+    },
+    {
+      href: '#events',
+      text: 'Events',
     },
   ];
 </script>
 
 <Article title="Button" {links}>
   <div class="flex flex-col gap-4">
-    <DocSection title="Theme" id="theme">
-      <Codeblock code={data.buttons} metadata="Svelte">
+    <DocSection title="Themes" id="themes">
+      <svelte:fragment slot="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum
+        asperiores voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum
+        iusto, officiis est sequi atque amet laborum similique.
+      </svelte:fragment>
+      <Codeblock code={data.themes} metadata="Svelte">
         <div class="flex items-center justify-center gap-2 p-4">
           <Button theme="base">Base</Button>
           <Button theme="neutral">Neutral</Button>
@@ -34,15 +54,22 @@
         </div>
       </Codeblock>
     </DocSection>
-    <div class="flex gap-2">
-      <Button theme="base">Base</Button>
-      <Button theme="neutral">Neutral</Button>
-      <Button theme="primary">Primary</Button>
-      <Button theme="secondary">Secondary</Button>
-      <Button theme="accent">Accent</Button>
-      <Button theme="destructive">Destructive</Button>
-    </div>
-    <div class="flex gap-2">
+    <DocSection title="Variants" id="variants">
+      <svelte:fragment slot="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum
+        asperiores voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum
+        iusto, officiis est sequi atque amet laborum similique.
+      </svelte:fragment>
+      <Codeblock code={data.variants} metadata="Svelte">
+        <div class="flex items-center justify-center gap-2 p-4">
+          <Button variant="outline">Outline</Button>
+          <Button variant="ghost">Ghost</Button>
+          <Button variant="link">Link</Button>
+        </div>
+      </Codeblock>
+    </DocSection>
+
+    <!-- <div class="flex gap-2">
       <Button variant="outline">Outline</Button>
       <Button variant="ghost">Ghost</Button>
       <Button variant="link">Link</Button>
@@ -98,6 +125,6 @@
       <Button theme="destructive" disabled>Button</Button>
       <Button theme="destructive" variant="outline">Button</Button>
       <Button theme="destructive" variant="outline" disabled>Button</Button>
-    </div>
+    </div> -->
   </div>
 </Article>
