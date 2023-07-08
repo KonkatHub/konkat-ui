@@ -37,14 +37,110 @@
           href: '/checkbox',
           text: 'Checkbox',
         },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
+        {
+          href: '/button',
+          text: 'Button',
+        },
+        {
+          href: '/checkbox',
+          text: 'Checkbox',
+        },
       ],
     },
   ];
 </script>
 
 <!-- TODO: Use drawer menu -->
-<aside class="hidden min-h-full w-1/4 border-r px-8 py-8 sm:block">
-  <nav>
+<aside class="hidden w-1/4 border-r sm:block">
+  <nav class="sticky top-[73px] max-h-[calc(100vh-48px)] overflow-y-auto px-8 py-8">
     <Sidebar {sections} />
   </nav>
 </aside>

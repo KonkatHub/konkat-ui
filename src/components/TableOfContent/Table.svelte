@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { cn } from '$lib/utils';
   import Link, { type LinkInfo } from './Link.svelte';
 
   let className: string | undefined | null = undefined;

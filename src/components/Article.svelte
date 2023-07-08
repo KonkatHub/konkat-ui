@@ -1,5 +1,9 @@
 <script lang="ts">
+  import type { LinkInfo } from './TableOfContent/Link.svelte';
+  import Table from './TableOfContent/Table.svelte';
+
   export let title: string;
+  export let links: LinkInfo[];
 </script>
 
 <article class="w-full">
@@ -7,5 +11,5 @@
   <slot />
 </article>
 <aside class="w-full sm:w-1/5">
-  <slot name="sidebar" />
+  <Table {links} class="sticky top-28" />
 </aside>

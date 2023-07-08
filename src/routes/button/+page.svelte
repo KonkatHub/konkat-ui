@@ -4,6 +4,7 @@
   import type { LinkInfo } from '$components/TableOfContent/Link.svelte';
   import Button from '$lib/components/button/Button.svelte';
   import Codeblock from '$components/Codeblock.svelte';
+  import DocSection from '$components/DocSection.svelte';
 
   export let data;
 
@@ -11,24 +12,6 @@
     {
       href: '#theme',
       text: 'Theme',
-      child: [
-        {
-          href: '#primary',
-          text: 'Primary',
-        },
-        {
-          href: '#secondary',
-          text: 'Secondary',
-        },
-        {
-          href: '#accent',
-          text: 'Accent',
-        },
-        {
-          href: '#destructive',
-          text: 'Destructive',
-        },
-      ],
     },
     {
       href: '#size',
@@ -37,19 +20,20 @@
   ];
 </script>
 
-<Article title="Button">
+<Article title="Button" {links}>
   <div class="flex flex-col gap-4 py-8">
-    <Codeblock code={data.buttons} metadata="Svelte" />
-    <Codeblock code={data.buttons} metadata="Svelte">
-      <div class="flex items-center justify-center gap-2 p-4">
-        <Button theme="base">Base</Button>
-        <Button theme="neutral">Neutral</Button>
-        <Button theme="primary">Primary</Button>
-        <Button theme="secondary">Secondary</Button>
-        <Button theme="accent">Accent</Button>
-        <Button theme="destructive">Destructive</Button>
-      </div>
-    </Codeblock>
+    <DocSection title="Theme" id="theme">
+      <Codeblock code={data.buttons} metadata="Svelte">
+        <div class="flex items-center justify-center gap-2 p-4">
+          <Button theme="base">Base</Button>
+          <Button theme="neutral">Neutral</Button>
+          <Button theme="primary">Primary</Button>
+          <Button theme="secondary">Secondary</Button>
+          <Button theme="accent">Accent</Button>
+          <Button theme="destructive">Destructive</Button>
+        </div>
+      </Codeblock>
+    </DocSection>
     <div class="flex gap-2">
       <Button theme="base">Base</Button>
       <Button theme="neutral">Neutral</Button>
@@ -116,5 +100,4 @@
       <Button theme="destructive" variant="outline" disabled>Button</Button>
     </div>
   </div>
-  <Table slot="sidebar" {links} />
 </Article>
