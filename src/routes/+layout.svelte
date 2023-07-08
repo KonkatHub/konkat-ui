@@ -6,7 +6,7 @@
   import 'iconify-icon';
 </script>
 
-<div class="flex min-h-screen w-screen flex-col text-gray-800">
+<div class="flex min-h-screen w-screen flex-col text-neutral-900">
   <Navbar />
   <div class="flex flex-1 border-y">
     <Naviguation />

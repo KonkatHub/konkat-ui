@@ -9,20 +9,28 @@
 </script>
 
 <script lang="ts">
+  import Button from '$lib/components/button/Button.svelte';
   import Table from './Table.svelte';
 
   export let link: LinkInfo;
+  export let isNested = false;
 </script>
 
 {#if link === 'divider'}
   <div class="block w-full border-b" />
 {:else}
   <li>
-    <a class="text-blue-500 underline transition-colors hover:text-blue-800" href={link.href}>
+    <Button
+      href={link.href}
+      size={isNested ? 'xs' : 'sm'}
+      theme="base"
+      variant="link"
+      class="w-full justify-start"
+    >
       {link.text}
-    </a>
+    </Button>
     {#if link.child}
-      <Table links={link.child} class="space-y-0 pl-4" />
+      <Table isNested links={link.child} class="pl-4" />
     {/if}
   </li>
 {/if}

@@ -5,10 +5,11 @@
   let className: string | undefined | null = undefined;
   export { className as class };
   export let links: LinkInfo[];
+  export let isNested = false;
 </script>
 
-<ul class={cn('space-y-4', className)}>
+<ul class={className}>
   {#each links as link}
-    <Link {link} />
+    <Link {link} {isNested} />
   {/each}
 </ul>
