@@ -10,32 +10,11 @@
 
 <script lang="ts">
   import Button from '$lib/components/button/Button.svelte';
+  import { scrollIntoView } from '$lib/utils';
   import Table from './Table.svelte';
 
   export let link: LinkInfo;
   export let isNested = false;
-
-  function scrollIntoView(e: MouseEvent) {
-    e.preventDefault();
-
-    const headerOffset = 100;
-
-    const href = (e.target as HTMLAnchorElement).href;
-    const id = href.split('#')[1];
-
-    const element = document.querySelector('#' + id);
-    if (!element) {
-      return;
-    }
-
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth',
-    });
-  }
 </script>
 
 {#if link === 'divider'}

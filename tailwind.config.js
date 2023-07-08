@@ -3,6 +3,9 @@ export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
+      extend: {
+        textColor: ['group-hover'],
+      },
       colors: {
         base: {
           100: 'rgb(var(--konkat-base-100) / <alpha-value>)',

@@ -21,7 +21,7 @@
 </script>
 
 <Article title="Button" {links}>
-  <div class="flex flex-col gap-4 py-8">
+  <div class="flex flex-col gap-4">
     <DocSection title="Theme" id="theme">
       <Codeblock code={data.buttons} metadata="Svelte">
         <div class="flex items-center justify-center gap-2 p-4">

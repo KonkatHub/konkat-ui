@@ -8,6 +8,7 @@
 
 <article class="w-full">
   <h1 class="text-5xl font-bold">{title}</h1>
+  <hr class="my-8" />
   <slot />
 </article>
 <aside class="w-full sm:w-1/5">

@@ -33,6 +33,4 @@
   ];
 </script>
 
-<Article title="Checkbox">
-  <Table slot="sidebar" {links} />
-</Article>
+<Article title="Checkbox" {links} />
