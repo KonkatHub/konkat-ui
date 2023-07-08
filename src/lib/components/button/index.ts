@@ -24,8 +24,15 @@ export const buttonVariants = cva(
   {
     variants: {
       theme: {
-        default: [
-          'bg-primary text-white ',
+        base: [
+          'bg-base-700 text-base-50',
+          'hover:bg-base-900',
+          'active:bg-base-950',
+          'focus-visible:outline-base-700',
+          'disabled:bg-base-200 disabled:text-base-800',
+        ],
+        primary: [
+          'bg-primary text-white',
           'hover:bg-primary-600',
           'active:bg-primary-700',
           'focus-visible:outline-primary',
@@ -54,11 +61,15 @@ export const buttonVariants = cva(
         ],
       },
       variant: {
-        default: '',
-        outline: 'border border-solid',
+        outline: [
+          'border border-solid bg-opacity-0',
+          'hover:bg-opacity-10',
+          'active:bg-opacity-20',
+          'disabled:bg-transparent',
+        ],
+        link: '',
       },
       shape: {
-        default: '',
         pill: 'rounded-full',
         square: 'aspect-square',
         circle: 'rounded-full aspect-square',
@@ -66,16 +77,21 @@ export const buttonVariants = cva(
       size: {
         xs: 'h-8 px-2 text-sm',
         sm: 'h-9 px-3',
-        default: 'h-10 px-4',
+        md: 'h-10 px-4',
         lg: 'h-12 px-8 text-lg',
       },
     },
     compoundVariants: [
       {
-        theme: 'default',
+        theme: 'base',
+        variant: 'outline',
+        class: ['text-base-700 border-neutral-700'],
+      },
+      {
+        theme: 'primary',
         variant: 'outline',
         class: [
-          'text-primary-700 border-primary-700 bg-white',
+          'text-primary-700 border-primary-700 bg-transparent',
           'hover:bg-primary-50',
           'active:bg-primary-100',
           'focus-visible:outline-primary-700',
@@ -86,7 +102,7 @@ export const buttonVariants = cva(
         theme: 'secondary',
         variant: 'outline',
         class: [
-          'text-secondary-700 border-secondary-700 bg-white',
+          'text-secondary-700 border-secondary-700 bg-transparent',
           'hover:bg-secondary-50',
           'active:bg-secondary-100',
           'focus-visible:outline-secondary-700',
@@ -97,7 +113,7 @@ export const buttonVariants = cva(
         theme: 'accent',
         variant: 'outline',
         class: [
-          'text-accent-700 border-accent-700 bg-white',
+          'text-accent-700 border-accent-700 bg-transparent',
           'hover:bg-accent-50',
           'active:bg-accent-100',
           'focus-visible:outline-accent-700',
@@ -108,7 +124,7 @@ export const buttonVariants = cva(
         theme: 'destructive',
         variant: 'outline',
         class: [
-          'text-destructive-700 border-destructive-700 bg-white',
+          'text-destructive-700 border-destructive-700 bg-transparent',
           'hover:bg-destructive-50',
           'active:bg-destructive-100',
           'focus-visible:outline-destructive-700',
@@ -116,16 +132,14 @@ export const buttonVariants = cva(
         ],
       },
       {
-        size: ['xs', 'sm', 'default', 'lg'],
+        size: ['xs', 'sm', 'md', 'lg'],
         shape: ['square', 'circle'],
         class: 'px-0',
       },
     ],
     defaultVariants: {
-      theme: 'default',
-      variant: 'default',
-      shape: 'default',
-      size: 'default',
+      theme: 'base',
+      size: 'md',
     },
   }
 );

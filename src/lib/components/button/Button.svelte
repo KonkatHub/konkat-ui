@@ -5,10 +5,10 @@
 
   let className: string | undefined | null = undefined;
   export { className as class };
-  export let theme: VariantProps<typeof buttonVariants>['theme'] = 'default';
-  export let variant: VariantProps<typeof buttonVariants>['variant'] = 'default';
-  export let shape: VariantProps<typeof buttonVariants>['shape'] = 'default';
-  export let size: VariantProps<typeof buttonVariants>['size'] = 'default';
+  export let theme: VariantProps<typeof buttonVariants>['theme'] = undefined;
+  export let variant: VariantProps<typeof buttonVariants>['variant'] = undefined;
+  export let shape: VariantProps<typeof buttonVariants>['shape'] = undefined;
+  export let size: VariantProps<typeof buttonVariants>['size'] = undefined;
 
   export let type: ButtonProps['type'] = 'button';
   export let href: ButtonProps['href'] = undefined;
