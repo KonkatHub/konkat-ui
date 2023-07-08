@@ -24,7 +24,7 @@
       href={link.href}
       size={isNested ? 'xs' : 'sm'}
       theme="base"
-      variant="link"
+      variant="ghost"
       class="w-full justify-start"
     >
       {link.text}

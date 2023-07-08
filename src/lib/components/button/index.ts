@@ -74,7 +74,7 @@ export const buttonVariants = cva(
           'active:bg-opacity-20',
           'disabled:bg-transparent',
         ],
-        link: [
+        ghost: [
           'bg-transparent border-none',
           'hover:bg-opacity-10',
           'active:bg-opacity-20',
@@ -131,32 +131,32 @@ export const buttonVariants = cva(
       },
       {
         theme: 'base',
-        variant: 'link',
+        variant: 'ghost',
         class: ['hover:bg-opacity-50', 'active:bg-opacity-70'],
       },
       {
         theme: 'neutral',
-        variant: 'link',
+        variant: 'ghost',
         class: ['text-neutral-700'],
       },
       {
         theme: 'primary',
-        variant: 'link',
+        variant: 'ghost',
         class: ['text-primary-700'],
       },
       {
         theme: 'secondary',
-        variant: 'link',
+        variant: 'ghost',
         class: ['text-secondary-700'],
       },
       {
         theme: 'accent',
-        variant: 'link',
+        variant: 'ghost',
         class: ['text-accent-700'],
       },
       {
         theme: 'destructive',
-        variant: 'link',
+        variant: 'ghost',
         class: ['text-destructive-700'],
       },
       {

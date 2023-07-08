@@ -36,7 +36,7 @@
             href={link.href}
             size={'sm'}
             theme="base"
-            variant="link"
+            variant="ghost"
             class="w-full justify-start"
           >
             {link.text}
