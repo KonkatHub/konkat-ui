@@ -43,6 +43,12 @@
       <Button variant="outline" disabled>Button</Button>
     </div>
     <div class="flex gap-2">
+      <Button theme="neutral">Button</Button>
+      <Button theme="neutral" disabled>Button</Button>
+      <Button theme="neutral" variant="outline">Button</Button>
+      <Button theme="neutral" variant="outline" disabled>Button</Button>
+    </div>
+    <div class="flex gap-2">
       <Button theme="primary">Button</Button>
       <Button theme="primary" disabled>Button</Button>
       <Button theme="primary" variant="outline">Button</Button>

@@ -25,11 +25,18 @@ export const buttonVariants = cva(
     variants: {
       theme: {
         base: [
-          'bg-base-700 text-base-50',
-          'hover:bg-base-900',
-          'active:bg-base-950',
-          'focus-visible:outline-base-700',
-          'disabled:bg-base-200 disabled:text-base-800',
+          'bg-base-200 text-neutral-800',
+          'hover:bg-base-300',
+          'active:bg-base-400',
+          'focus-visible:outline-neutral-700',
+          'disabled:hover:bg-base-200',
+        ],
+        neutral: [
+          'bg-neutral-700 text-neutral-50',
+          'hover:bg-neutral-900',
+          'active:bg-neutral-950',
+          'focus-visible:outline-neutral-700',
+          'disabled:bg-neutral-200 disabled:text-neutral-800',
         ],
         primary: [
           'bg-primary-500',
@@ -85,7 +92,16 @@ export const buttonVariants = cva(
       {
         theme: 'base',
         variant: 'outline',
-        class: ['text-base-700 border-base-700'],
+        class: [
+          'text-neutral-700 border-neutral-700',
+          'hover:bg-neutral-700',
+          'active:bg-neutral-700',
+        ],
+      },
+      {
+        theme: 'neutral',
+        variant: 'outline',
+        class: ['text-neutral-700 border-neutral-700'],
       },
       {
         theme: 'primary',
