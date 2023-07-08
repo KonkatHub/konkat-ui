@@ -74,7 +74,12 @@ export const buttonVariants = cva(
           'active:bg-opacity-20',
           'disabled:bg-transparent',
         ],
-        link: '',
+        link: [
+          'bg-transparent border-none',
+          'hover:bg-opacity-10',
+          'active:bg-opacity-20',
+          'disabled:bg-transparent disabled:text-opacity-50 disabled:hover:bg-transparent',
+        ],
       },
       shape: {
         pill: 'rounded-full',
@@ -96,6 +101,7 @@ export const buttonVariants = cva(
           'text-neutral-700 border-neutral-700',
           'hover:bg-neutral-700',
           'active:bg-neutral-700',
+          'disabled:hover:bg-transparent',
         ],
       },
       {
@@ -122,6 +128,36 @@ export const buttonVariants = cva(
         theme: 'destructive',
         variant: 'outline',
         class: ['text-destructive-700 border-destructive-700'],
+      },
+      {
+        theme: 'base',
+        variant: 'link',
+        class: ['hover:bg-opacity-50', 'active:bg-opacity-70'],
+      },
+      {
+        theme: 'neutral',
+        variant: 'link',
+        class: ['text-neutral-700'],
+      },
+      {
+        theme: 'primary',
+        variant: 'link',
+        class: ['text-primary-700'],
+      },
+      {
+        theme: 'secondary',
+        variant: 'link',
+        class: ['text-secondary-700'],
+      },
+      {
+        theme: 'accent',
+        variant: 'link',
+        class: ['text-accent-700'],
+      },
+      {
+        theme: 'destructive',
+        variant: 'link',
+        class: ['text-destructive-700'],
       },
       {
         size: ['xs', 'sm', 'md', 'lg'],
