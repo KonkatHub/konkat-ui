@@ -57,13 +57,14 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "@sveltejs/adapter-node": "^1.2.4",
     "@melt-ui/svelte": "^0.17.0",
+    "@sveltejs/adapter-node": "^1.2.4",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "iconify-icon": "^1.0.8",
     "prism-svelte": "^0.5.0",
     "prismjs": "^1.29.0",
+    "svelte-inview": "^4.0.1",
     "tailwind-merge": "^1.13.2"
   }
 }

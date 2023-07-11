@@ -13,12 +13,16 @@
       text: 'Themes',
     },
     {
+      href: '#active',
+      text: 'Active',
+    },
+    {
       href: '#variants',
       text: 'Variants',
     },
     {
-      href: '#size',
-      text: 'Size',
+      href: '#sizes',
+      text: 'Sizes',
     },
     {
       href: '#disabled',

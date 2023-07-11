@@ -9,23 +9,35 @@
 </script>
 
 <script lang="ts">
+  import { spy } from '$lib/actions/spy';
+
   import Button from '$lib/components/button/Button.svelte';
   import { scrollIntoView } from '$lib/utils';
   import Table from './Table.svelte';
 
   export let link: LinkInfo;
   export let isNested = false;
+
+  let isTargetInView = false;
 </script>
 
 {#if link === 'divider'}
   <div class="block w-full border-b" />
 {:else}
-  <li>
+  <li
+    use:spy={{
+      target: link.href.slice(1),
+      intel: ['data-in-view'],
+    }}
+    on:signal={(event) => {
+      isTargetInView = event.detail.value === 'true';
+    }}
+  >
     <Button
       href={link.href}
       size={isNested ? 'xs' : 'sm'}
-      theme="base"
       variant="ghost"
+      active={isTargetInView}
       class="w-full justify-start"
       on:click={scrollIntoView}
     >
