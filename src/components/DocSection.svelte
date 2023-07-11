@@ -14,10 +14,9 @@
       {id}
       class="pointer-events-none relative mb-2 text-3xl"
       data-in-view={inView}
-      use:inview={{}}
+      use:inview={{ rootMargin: '-10% 0px -70%' }}
       on:inview_change={(event) => {
         inView = event.detail.inView;
-        console.log(inView);
       }}
     >
       <span class="absolute -left-6 opacity-0 transition-opacity group-hover:opacity-20">#</span>
