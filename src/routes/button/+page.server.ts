@@ -10,8 +10,14 @@ export const load = async () => {
 <Button variant="ghost">Ghost</Button>
 <Button variant="link">Link</Button>`;
 
+  const sizes = `<Button size="xs">Extra small</Button>
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>`;
+
   return {
     themes,
     variants,
+    sizes,
   };
 };

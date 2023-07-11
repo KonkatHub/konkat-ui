@@ -44,7 +44,7 @@
         iusto, officiis est sequi atque amet laborum similique.
       </svelte:fragment>
       <Codeblock code={data.themes} metadata="Svelte">
-        <div class="flex items-center justify-center gap-2 p-4">
+        <div class="flex w-full flex-wrap items-center justify-center gap-2 p-4">
           <Button theme="base">Base</Button>
           <Button theme="neutral">Neutral</Button>
           <Button theme="primary">Primary</Button>
@@ -65,6 +65,21 @@
           <Button variant="outline">Outline</Button>
           <Button variant="ghost">Ghost</Button>
           <Button variant="link">Link</Button>
+        </div>
+      </Codeblock>
+    </DocSection>
+    <DocSection title="Sizes" id="sizes">
+      <svelte:fragment slot="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum
+        asperiores voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum
+        iusto, officiis est sequi atque amet laborum similique.
+      </svelte:fragment>
+      <Codeblock code={data.sizes} metadata="Svelte">
+        <div class="flex items-center justify-center gap-2 p-4">
+          <Button size="xs">Extra small</Button>
+          <Button size="sm">Small</Button>
+          <Button size="md">Medium</Button>
+          <Button size="lg">Large</Button>
         </div>
       </Codeblock>
     </DocSection>
