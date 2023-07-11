@@ -9,6 +9,7 @@
   export let variant: VariantProps<typeof buttonVariants>['variant'] = undefined;
   export let shape: VariantProps<typeof buttonVariants>['shape'] = undefined;
   export let size: VariantProps<typeof buttonVariants>['size'] = undefined;
+  export let active = false;
 
   export let type: ButtonProps['type'] = 'button';
   export let href: ButtonProps['href'] = undefined;
@@ -18,6 +19,7 @@
     variant?: VariantProps<typeof buttonVariants>['variant'];
     shape?: VariantProps<typeof buttonVariants>['shape'];
     size?: VariantProps<typeof buttonVariants>['size'];
+    active?: boolean;
   };
 
   type $$Props = ButtonProps & Props;
@@ -29,6 +31,7 @@
   type={href ? undefined : type}
   {href}
   class={cn(buttonVariants({ theme, variant, shape, size, className }))}
+  data-active={active}
   {...$$restProps}
   on:click
   on:change

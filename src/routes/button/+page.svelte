@@ -54,6 +54,23 @@
         </div>
       </Codeblock>
     </DocSection>
+    <DocSection title="Active" id="active">
+      <svelte:fragment slot="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum
+        asperiores voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum
+        iusto, officiis est sequi atque amet laborum similique.
+      </svelte:fragment>
+      <Codeblock code={data.active} metadata="Svelte">
+        <div class="flex w-full flex-wrap items-center justify-center gap-2 p-4">
+          <Button theme="base" active>Base</Button>
+          <Button theme="neutral" active>Neutral</Button>
+          <Button theme="primary" active>Primary</Button>
+          <Button theme="secondary" active>Secondary</Button>
+          <Button theme="accent" active>Accent</Button>
+          <Button theme="destructive" active>Destructive</Button>
+        </div>
+      </Codeblock>
+    </DocSection>
     <DocSection title="Variants" id="variants">
       <svelte:fragment slot="description">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum

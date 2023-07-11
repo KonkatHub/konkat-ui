@@ -12,6 +12,8 @@
 </script>
 
 <script lang="ts">
+  import { page } from '$app/stores';
+
   import Button from '$lib/components/button/Button.svelte';
 
   let className: string | undefined | null = undefined;
@@ -31,12 +33,13 @@
     </div>
     <ul class={className}>
       {#each section.links as link}
+        {@const isSelected = link.href === $page.url.pathname}
         <li>
           <Button
             href={link.href}
             size={'sm'}
-            theme="base"
             variant="ghost"
+            active={isSelected}
             class="w-full justify-start"
           >
             {link.text}

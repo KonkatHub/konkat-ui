@@ -6,6 +6,13 @@ export const load = async () => {
 <Button theme="accent">Accent</Button>
 <Button theme="destructive">Destructive</Button>`;
 
+  const active = `<Button theme="base" active>Base</Button>
+<Button theme="neutral" active>Neutral</Button>
+<Button theme="primary" active>Primary</Button>
+<Button theme="secondary" active>Secondary</Button>
+<Button theme="accent" active>Accent</Button>
+<Button theme="destructive" active>Destructive</Button>`;
+
   const variants = `<Button variant="outline">Outline</Button>
 <Button variant="ghost">Ghost</Button>
 <Button variant="link">Link</Button>`;
@@ -17,6 +24,7 @@ export const load = async () => {
 
   return {
     themes,
+    active,
     variants,
     sizes,
   };
