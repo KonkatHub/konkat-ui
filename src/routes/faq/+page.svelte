@@ -5,4 +5,4 @@
   const links: LinkInfo[] = [];
 </script>
 
-<Article title="faq" {links} />
+<Article title="FAQ" {links} />

@@ -28,7 +28,7 @@
 {:else}
   <li
     use:spy={{
-      target: `#${link.href.slice(1)}`,
+      target: link.href,
       intel: ['data-in-view'],
     }}
     on:signal={(event) => {

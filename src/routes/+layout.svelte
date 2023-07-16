@@ -12,7 +12,7 @@
   <div class="flex flex-1 border-b">
     <Naviguation />
     <main
-      class="z-0 flex h-max w-full flex-col-reverse gap-4 px-4 py-8 sm:flex-row sm:justify-between md:px-8 lg:px-12"
+      class="z-0 flex h-max w-full flex-col-reverse gap-12 px-4 py-8 sm:flex-row sm:justify-between md:px-8 lg:px-12"
     >
       <slot />
     </main>

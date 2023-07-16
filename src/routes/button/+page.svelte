@@ -17,6 +17,10 @@
       text: 'Active',
     },
     {
+      href: '#disabled',
+      text: 'Disabled',
+    },
+    {
       href: '#variants',
       text: 'Variants',
     },
@@ -25,12 +29,16 @@
       text: 'Sizes',
     },
     {
-      href: '#disabled',
-      text: 'Disabled',
+      href: '#shapes',
+      text: 'Shapes',
     },
     {
       href: '#icons',
       text: 'Icons',
+    },
+    {
+      href: '#element',
+      text: 'Element',
     },
     {
       href: '#events',
@@ -75,6 +83,23 @@
         </div>
       </Codeblock>
     </DocSection>
+    <DocSection title="Disabled" id="disabled">
+      <svelte:fragment slot="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum
+        asperiores voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum
+        iusto, officiis est sequi atque amet laborum similique.
+      </svelte:fragment>
+      <Codeblock code={data.disabled} metadata="Svelte">
+        <div class="flex w-full flex-wrap items-center justify-center gap-2 p-4">
+          <Button theme="base" disabled>Base</Button>
+          <Button theme="neutral" disabled>Neutral</Button>
+          <Button theme="primary" disabled>Primary</Button>
+          <Button theme="secondary" disabled>Secondary</Button>
+          <Button theme="accent" disabled>Accent</Button>
+          <Button theme="destructive" disabled>Destructive</Button>
+        </div>
+      </Codeblock>
+    </DocSection>
     <DocSection title="Variants" id="variants">
       <svelte:fragment slot="description">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum
@@ -97,70 +122,73 @@
       </svelte:fragment>
       <Codeblock code={data.sizes} metadata="Svelte">
         <div class="flex items-center justify-center gap-2 p-4">
-          <Button size="xs">Extra small</Button>
+          <Button size="xs">Tiny</Button>
           <Button size="sm">Small</Button>
           <Button size="md">Medium</Button>
           <Button size="lg">Large</Button>
         </div>
       </Codeblock>
     </DocSection>
-
-    <!-- <div class="flex gap-2">
-      <Button variant="outline">Outline</Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="link">Link</Button>
-    </div>
-    <div class="flex gap-2">
-      <Button theme="base" variant="link">Link</Button>
-      <Button theme="neutral" variant="link">Link</Button>
-      <Button theme="primary" variant="link">Link</Button>
-      <Button theme="secondary" disabled variant="link">Link</Button>
-      <Button theme="accent" variant="link">Link</Button>
-      <Button theme="destructive" variant="link">Link</Button>
-    </div>
-    <div class="flex gap-2">
-      <Button theme="base" variant="ghost">Ghost</Button>
-      <Button theme="neutral" variant="ghost">Ghost</Button>
-      <Button theme="primary" variant="ghost">Ghost</Button>
-      <Button theme="secondary" variant="ghost">Ghost</Button>
-      <Button theme="accent" variant="ghost">Ghost</Button>
-      <Button theme="destructive" variant="ghost">Ghost</Button>
-    </div>
-    <div class="flex gap-2">
-      <Button>Button</Button>
-      <Button disabled>Button</Button>
-      <Button variant="outline">Button</Button>
-      <Button variant="outline" disabled>Button</Button>
-    </div>
-    <div class="flex gap-2">
-      <Button theme="neutral">Button</Button>
-      <Button theme="neutral" disabled>Button</Button>
-      <Button theme="neutral" variant="outline">Button</Button>
-      <Button theme="neutral" variant="outline" disabled>Button</Button>
-    </div>
-    <div class="flex gap-2">
-      <Button theme="primary">Button</Button>
-      <Button theme="primary" disabled>Button</Button>
-      <Button theme="primary" variant="outline">Button</Button>
-      <Button theme="primary" variant="outline" disabled>Button</Button>
-    </div>
-    <div class="flex gap-2">
-      <Button theme="secondary">Button</Button>
-      <Button theme="secondary" disabled>Button</Button>
-      <Button theme="secondary" variant="outline">Button</Button>
-      <Button theme="secondary" variant="outline" disabled>Button</Button>
-    </div>
-    <div class="flex gap-2">
-      <Button theme="accent">Button</Button>
-      <Button theme="accent" disabled>Button</Button>
-      <Button theme="accent" variant="outline">Button</Button>
-      <Button theme="accent" variant="outline" disabled>Button</Button>
-    </div>
-    <div class="flex gap-2">
-      <Button theme="destructive">Button</Button>
-      <Button theme="destructive" disabled>Button</Button>
-      <Button theme="destructive" variant="outline">Button</Button>
-      <Button theme="destructive" variant="outline" disabled>Button</Button>
-    </div> -->
+    <DocSection title="Shapes" id="shapes">
+      <svelte:fragment slot="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum
+        asperiores voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum
+        iusto, officiis est sequi atque amet laborum similique.
+      </svelte:fragment>
+      <Codeblock code={data.shapes} metadata="Svelte">
+        <div class="flex items-center justify-center gap-2 p-4">
+          <Button>Button</Button>
+          <Button shape="pill">Button</Button>
+          <Button shape="square">
+            <iconify-icon icon="mdi:check" width="24" />
+          </Button>
+          <Button shape="circle">
+            <iconify-icon icon="mdi:check" width="24" />
+          </Button>
+        </div>
+      </Codeblock>
+    </DocSection>
+    <DocSection title="Icons" id="icons">
+      <svelte:fragment slot="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum
+        asperiores voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum
+        iusto, officiis est sequi atque amet laborum similique.
+      </svelte:fragment>
+      <Codeblock code={data.icons} metadata="Svelte">
+        <div class="flex items-center justify-center gap-2 p-4">
+          <Button>
+            <iconify-icon icon="mdi:cart" width="20" />
+            Checkout
+          </Button>
+          <Button>
+            Checkout
+            <iconify-icon icon="mdi:cart" width="20" />
+          </Button>
+        </div>
+      </Codeblock>
+    </DocSection>
+    <DocSection title="Element" id="element">
+      <svelte:fragment slot="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum
+        asperiores voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum
+        iusto, officiis est sequi atque amet laborum similique.
+      </svelte:fragment>
+      <Codeblock code={data.element} metadata="Svelte">
+        <div class="flex items-center justify-center gap-2 p-4">
+          <Button href="https://github.com/KonkatHub/konkat-ui" target="_blank">
+            Github
+            <iconify-icon icon="mdi:open-in-new" width="18" />
+          </Button>
+        </div>
+      </Codeblock>
+    </DocSection>
+    <DocSection title="Events" id="events">
+      <svelte:fragment slot="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum
+        asperiores voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum
+        iusto, officiis est sequi atque amet laborum similique.
+      </svelte:fragment>
+      <Codeblock code={data.events} metadata="Svelte" />
+    </DocSection>
   </div>
 </Article>
