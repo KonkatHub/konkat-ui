@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@konkat/svelte-spy':
+    specifier: ^0.0.2
+    version: 0.0.2(svelte@4.0.5)
   '@melt-ui/svelte':
     specifier: ^0.17.0
     version: 0.17.0(svelte@4.0.5)
@@ -397,6 +400,14 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+
+  /@konkat/svelte-spy@0.0.2(svelte@4.0.5):
+    resolution: {integrity: sha512-SjiGuoRbh912AdheZEojm9RS/uDCcV+ejaArH6Gy8lpOjAXJW9NKXXCd83AFD2NvZecmY7droxmLdb/b2d1w9g==}
+    peerDependencies:
+      svelte: ^4.0.0
+    dependencies:
+      svelte: 4.0.5
+    dev: false
 
   /@melt-ui/svelte@0.17.0(svelte@4.0.5):
     resolution: {integrity: sha512-FrFcV/AGR4zUpALZxM8D56KaasB216rn0wCguc9ZnP7tdKb/8tHAzzCGBwb3n6MsCOLhF2CcTVXBaMfaoIxipg==}

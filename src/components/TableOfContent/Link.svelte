@@ -10,7 +10,7 @@
 </script>
 
 <script lang="ts">
-  import { spy } from '$lib/actions/spy';
+  import { spy } from '@konkat/svelte-spy';
   import Button from '$lib/components/button/Button.svelte';
   import { scrollIntoView } from '$lib/utils';
   import Table from './Table.svelte';
@@ -28,7 +28,7 @@
 {:else}
   <li
     use:spy={{
-      target: link.href.slice(1),
+      target: `#${link.href.slice(1)}`,
       intel: ['data-in-view'],
     }}
     on:signal={(event) => {

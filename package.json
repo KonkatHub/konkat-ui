@@ -57,6 +57,7 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
+    "@konkat/svelte-spy": "^0.0.2",
     "@melt-ui/svelte": "^0.17.0",
     "@sveltejs/adapter-node": "^1.2.4",
     "class-variance-authority": "^0.6.0",
