@@ -4,56 +4,70 @@
 
 @layer base {
   :root {
-    --color-primary-50: hsl(252, 83%, 98%);
-    --color-primary-100: hsl(251, 74%, 95%);
-    --color-primary-200: hsl(249, 76%, 92%);
-    --color-primary-300: hsl(253, 79%, 85%);
-    --color-primary-400: hsl(255, 75%, 76%);
-    --color-primary-500: hsl(258, 73%, 63%);
-    --color-primary-default: hsl(258, 73%, 63%); /* alias for --color-primary-500 */
-    --color-primary-600: hsl(262, 68%, 58%);
-    --color-primary-700: hsl(263, 57%, 50%);
-    --color-primary-800: hsl(263, 57%, 42%);
-    --color-primary-900: hsl(263, 55%, 35%);
-    --color-primary-950: hsl(260, 59%, 23%);
+    --konkat-base-100: 247 249 252;
+    --konkat-base-200: 243 245 248;
+    --konkat-base-300: 237 239 242;
+    --konkat-base-400: 232 233 237;
+    --konkat-base-500: 227 228 233;
 
-    --color-secondary-50: hsl(300, 82%, 98%);
-    --color-secondary-100: hsl(304, 74%, 95%);
-    --color-secondary-200: hsl(302, 75%, 91%);
-    --color-secondary-300: hsl(304, 72%, 83%);
-    --color-secondary-400: hsl(305, 71%, 73%);
-    --color-secondary-500: hsl(305, 66%, 59%);
-    --color-secondary-default: hsl(305, 66%, 59%); /* alias for --color-secondary-500 */
-    --color-secondary-600: hsl(306, 54%, 49%);
-    --color-secondary-700: hsl(307, 57%, 40%);
-    --color-secondary-800: hsl(308, 55%, 33%);
-    --color-secondary-900: hsl(309, 50%, 28%);
-    --color-secondary-950: hsl(309, 71%, 16%);
+    --konkat-neutral-50: 245 246 246;
+    --konkat-neutral-100: 228 231 233;
+    --konkat-neutral-200: 205 211 212;
+    --konkat-neutral-300: 169 179 183;
+    --konkat-neutral-400: 127 140 145;
+    --konkat-neutral-500: 100 113 118;
+    --konkat-neutral-600: 85 96 101;
+    --konkat-neutral-700: 73 80 85;
+    --konkat-neutral-800: 65 70 73;
+    --konkat-neutral-900: 57 61 64;
+    --konkat-neutral-950: 45 49 52;
 
-    --color-accent-50: hsl(160, 53%, 97%);
-    --color-accent-100: hsl(159, 64%, 89%);
-    --color-accent-200: hsl(162, 60%, 78%);
-    --color-accent-300: hsl(164, 56%, 64%);
-    --color-accent-400: hsl(166, 48%, 50%);
-    --color-accent-500: hsl(167, 59%, 40%);
-    --color-accent-default: hsl(167, 59%, 40%); /* alias for --color-accent-500 */
-    --color-accent-600: hsl(168, 61%, 32%);
-    --color-accent-700: hsl(169, 56%, 26%);
-    --color-accent-800: hsl(169, 51%, 22%);
-    --color-accent-900: hsl(169, 44%, 19%);
-    --color-accent-950: hsl(172, 61%, 10%);
+    --konkat-primary-50: 247 244 254;
+    --konkat-primary-100: 240 235 252;
+    --konkat-primary-200: 229 218 250;
+    --konkat-primary-300: 208 188 246;
+    --konkat-primary-400: 186 150 239;
+    --konkat-primary-500: 154 94 228;
+    --konkat-primary-600: 149 76 219;
+    --konkat-primary-700: 133 58 199;
+    --konkat-primary-800: 111 48 167;
+    --konkat-primary-900: 93 41 137;
+    --konkat-primary-950: 59 25 92;
 
-    --color-destructive-50: hsl(0, 100%, 97%);
-    --color-destructive-100: hsl(2, 100%, 94%);
-    --color-destructive-200: hsl(2, 100%, 89%);
-    --color-destructive-300: hsl(2, 100%, 81%);
-    --color-destructive-400: hsl(2, 100%, 66%);
-    --color-destructive-500: hsl(2, 93%, 60%);
-    --color-destructive-default: hsl(2, 93%, 60%); /* alias for --color-destructive-500 */
-    --color-destructive-600: hsl(2, 79%, 51%);
-    --color-destructive-700: hsl(2, 81%, 42%);
-    --color-destructive-800: hsl(2, 78%, 35%);
-    --color-destructive-900: hsl(2, 69%, 31%);
-    --color-destructive-950: hsl(2, 82%, 15%);
+    --konkat-secondary-50: 254 245 254;
+    --konkat-secondary-100: 252 235 251;
+    --konkat-secondary-200: 249 213 248;
+    --konkat-secondary-300: 243 180 239;
+    --konkat-secondary-400: 235 135 227;
+    --konkat-secondary-500: 219 81 208;
+    --konkat-secondary-600: 192 57 179;
+    --konkat-secondary-700: 159 44 145;
+    --konkat-secondary-800: 130 38 118;
+    --konkat-secondary-900: 107 36 96;
+    --konkat-secondary-950: 70 12 61;
+
+    --konkat-accent-50: 242 251 248;
+    --konkat-accent-100: 210 245 233;
+    --konkat-accent-200: 165 234 213;
+    --konkat-accent-300: 113 215 188;
+    --konkat-accent-400: 67 190 161;
+    --konkat-accent-500: 42 162 136;
+    --konkat-accent-600: 31 130 110;
+    --konkat-accent-700: 29 104 90;
+    --konkat-accent-800: 27 84 74;
+    --konkat-accent-900: 27 70 62;
+    --konkat-accent-950: 10 41 38;
+
+    --konkat-destructive-50: 255 241 241;
+    --konkat-destructive-100: 255 226 225;
+    --konkat-destructive-200: 255 201 199;
+    --konkat-destructive-300: 255 163 160;
+    --konkat-destructive-400: 255 111 106;
+    --konkat-destructive-500: 248 64 58;
+    --konkat-destructive-600: 230 34 28;
+    --konkat-destructive-700: 193 25 20;
+    --konkat-destructive-800: 160 24 20;
+    --konkat-destructive-900: 132 27 24;
+    --konkat-destructive-950: 72 9 7;
   }
 }
