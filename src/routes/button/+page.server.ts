@@ -21,6 +21,7 @@ export const load = async () => {
 <Button theme="destructive" disabled>Destructive</Button>`;
 
   const variants = `<Button variant="outline">Outline</Button>
+<Button variant="flat">Flat</Button>
 <Button variant="ghost">Ghost</Button>
 <Button variant="link">Link</Button>`;
 

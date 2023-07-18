@@ -74,6 +74,12 @@ export const buttonVariants = cva(
           'active:bg-opacity-20 data-[active=true]:bg-opacity-20',
           'disabled:bg-transparent',
         ],
+        flat: [
+          'bg-opacity-10 border-none',
+          'hover:bg-opacity-20',
+          'active:bg-opacity-30 data-[active=true]:bg-opacity-30',
+          'disabled:bg-transparent disabled:text-opacity-50 disabled:hover:bg-transparent',
+        ],
         ghost: [
           'bg-transparent border-none',
           'hover:bg-opacity-10',
@@ -142,32 +148,41 @@ export const buttonVariants = cva(
       },
       {
         theme: 'base',
-        variant: 'ghost',
+        variant: ['ghost'],
         class: ['hover:bg-opacity-50', 'active:bg-opacity-70 data-[active=true]:bg-opacity-70'],
       },
       {
+        theme: 'base',
+        variant: 'flat',
+        class: [
+          'bg-opacity-50 text-neutral-700',
+          'hover:bg-opacity-70',
+          'active:bg-opacity-90 data-[active=true]:bg-opacity-90',
+        ],
+      },
+      {
         theme: 'neutral',
-        variant: ['ghost', 'link'],
+        variant: ['ghost', 'flat', 'link'],
         class: ['text-neutral-700'],
       },
       {
         theme: 'primary',
-        variant: ['ghost', 'link'],
+        variant: ['ghost', 'flat', 'link'],
         class: ['text-primary-700'],
       },
       {
         theme: 'secondary',
-        variant: ['ghost', 'link'],
+        variant: ['ghost', 'flat', 'link'],
         class: ['text-secondary-700'],
       },
       {
         theme: 'accent',
-        variant: ['ghost', 'link'],
+        variant: ['ghost', 'flat', 'link'],
         class: ['text-accent-700'],
       },
       {
         theme: 'destructive',
-        variant: ['ghost', 'link'],
+        variant: ['ghost', 'flat', 'link'],
         class: ['text-destructive-700'],
       },
       {

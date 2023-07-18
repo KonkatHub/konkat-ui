@@ -109,6 +109,7 @@
       <Codeblock code={data.variants} metadata="Svelte">
         <div class="flex items-center justify-center gap-2 p-4">
           <Button variant="outline">Outline</Button>
+          <Button variant="flat">Flat</Button>
           <Button variant="ghost">Ghost</Button>
           <Button variant="link">Link</Button>
         </div>
