@@ -26,6 +26,7 @@
 {#if link === 'divider'}
   <div class="block w-full border-b" />
 {:else}
+  {@const isActive = $activeId === id}
   <li
     use:spy={{
       target: link.href,
@@ -40,9 +41,9 @@
     <Button
       href={link.href}
       size={isNested ? 'xs' : 'sm'}
-      variant="ghost"
-      active={$activeId === id}
-      class="w-full justify-start"
+      theme={isActive ? 'primary' : 'base'}
+      variant={isActive ? 'flat' : 'ghost'}
+      class="w-full justify-start {isActive ? 'pointer-events-none' : ''}"
       on:click={scrollIntoView}
     >
       {link.text}

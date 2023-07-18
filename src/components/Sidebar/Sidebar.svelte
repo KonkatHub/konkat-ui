@@ -40,7 +40,7 @@
             size={'sm'}
             variant="ghost"
             active={isSelected}
-            class="w-full justify-start"
+            class="w-full justify-start {isSelected ? 'pointer-events-none' : ''}"
           >
             {link.text}
           </Button>
