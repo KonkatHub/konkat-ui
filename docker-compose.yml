@@ -1,0 +1,10 @@
+version: '3'
+  
+services:
+  frontend:
+    image: konkat-ui-frontend
+    build:
+      context: .
+      dockerfile: Docker/frontend/Dockerfile
+    ports:
+      - "3000:3000"
