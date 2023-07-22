@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Docker/frontend/Dockerfile
     ports:
-      - "3000:3000"
+      - '3000:3000'
   webserver:
     image: nginx:latest
     ports:
