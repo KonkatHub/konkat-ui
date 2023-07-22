@@ -7,6 +7,8 @@ export default {
         textColor: ['group-hover'],
       },
       colors: {
+        background: 'rgb(var(--konkat-background) / <alpha-value>)',
+        text: 'rgb(var(--konkat-text) / <alpha-value>)',
         base: {
           100: 'rgb(var(--konkat-base-100) / <alpha-value>)',
           200: 'rgb(var(--konkat-base-200) / <alpha-value>)',
