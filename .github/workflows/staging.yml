@@ -82,4 +82,4 @@ jobs:
             git checkout develop
             git pull
             docker compose down
-            echo ${{ secrets.PASSWORD }} | sudo -S docker compose up --d --build
+            echo ${{ secrets.PASSWORD }} | sudo -S docker compose up --build -d
