@@ -87,4 +87,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: whoami
+          script: |
+            cd konkat-ui
+            git checkout develop
+            git pull
+            docker compose down
+            docker compose up &
+            docker compose run --rm certbot renew
