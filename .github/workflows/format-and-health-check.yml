@@ -1,9 +1,8 @@
-name: Formatting & Health Check
+name: Format and health check
 
 on:
   pull_request:
     branches:
-      - master
       - develop
 
 jobs:
