@@ -1,9 +1,12 @@
-name: Formatting & Health Check
+name: Staging pipeline
 
 on:
+  push:
+    branches:
+      - develop
+      - 4-cicd-pipeline
   pull_request:
     branches:
-      - master
       - develop
 
 jobs:
@@ -68,3 +71,20 @@ jobs:
           git add -A
           git commit -m "[AUTOMATED] chore: format all files using Prettier"
           git push
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: SSH into server
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: whoami
