@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.0.2
     version: 0.0.2(svelte@4.0.5)
   '@melt-ui/svelte':
-    specifier: ^0.17.0
-    version: 0.17.0(svelte@4.0.5)
+    specifier: ^0.22.0
+    version: 0.22.2(svelte@4.0.5)
   '@sveltejs/adapter-node':
     specifier: ^1.2.4
     version: 1.3.1(@sveltejs/kit@1.22.3)
@@ -37,6 +37,9 @@ dependencies:
     version: 1.14.0
 
 devDependencies:
+  '@melt-ui/pp':
+    specifier: ^0.0.6
+    version: 0.0.6(@melt-ui/svelte@0.22.2)(svelte@4.0.5)
   '@playwright/test':
     specifier: ^1.28.1
     version: 1.36.1
@@ -91,6 +94,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.4.3
     version: 3.4.6(postcss@8.4.26)(svelte@4.0.5)
+  svelte-sequential-preprocessor:
+    specifier: ^2.0.1
+    version: 2.0.1
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3
@@ -341,13 +347,11 @@ packages:
 
   /@floating-ui/core@1.3.1:
     resolution: {integrity: sha512-Bu+AMaXNjrpjh41znzHqaz3r2Nr8hHuHZT6V2LBKMhyMl0FgKA62PNYbqnfgmzOhoWZj70Zecisbo4H1rotP5g==}
-    dev: false
 
   /@floating-ui/dom@1.4.5:
     resolution: {integrity: sha512-96KnRWkRnuBSSFbj0sFGwwOUd8EkiecINVl0O9wiZlZ64EkpyAOG3Xc2vKKNJmru0Z7RqWNymA+6b8OZqjgyyw==}
     dependencies:
       '@floating-ui/core': 1.3.1
-    dev: false
 
   /@humanwhocodes/config-array@0.11.10:
     resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==}
@@ -409,8 +413,18 @@ packages:
       svelte: 4.0.5
     dev: false
 
-  /@melt-ui/svelte@0.17.0(svelte@4.0.5):
-    resolution: {integrity: sha512-FrFcV/AGR4zUpALZxM8D56KaasB216rn0wCguc9ZnP7tdKb/8tHAzzCGBwb3n6MsCOLhF2CcTVXBaMfaoIxipg==}
+  /@melt-ui/pp@0.0.6(@melt-ui/svelte@0.22.2)(svelte@4.0.5):
+    resolution: {integrity: sha512-89ABEJ6rZWyPWvSy++7+QVzAepesixHBBLPecNFoJm0kwVxj6gVMKLGJO56Cbx/+es7Y/kcHH0kLA2fl+GvedA==}
+    peerDependencies:
+      '@melt-ui/svelte': '>= 0.22.0'
+      svelte: ^3.55.0 || ^4.0.0
+    dependencies:
+      '@melt-ui/svelte': 0.22.2(svelte@4.0.5)
+      svelte: 4.0.5
+    dev: true
+
+  /@melt-ui/svelte@0.22.2(svelte@4.0.5):
+    resolution: {integrity: sha512-mcXyoEW5/74y3QWnxHeSZgj+F/zG6mK4F//Wqig3KUGZ6uUEDwjkRCGDhY3EvL5n8MfY2P8uJWXiTZ16kLeh7g==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
@@ -419,7 +433,6 @@ packages:
       focus-trap: 7.5.2
       nanoid: 4.0.2
       svelte: 4.0.5
-    dev: false
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1390,7 +1403,6 @@ packages:
     resolution: {integrity: sha512-p6vGNNWLDGwJCiEjkSK6oERj/hEyI9ITsSwIUICBoKLlWiTWXJRfQibCwcoi50rTZdbi87qDtUlMCmQwsGSgPw==}
     dependencies:
       tabbable: 6.2.0
-    dev: false
 
   /fraction.js@4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
@@ -1773,7 +1785,6 @@ packages:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
     engines: {node: ^14 || ^16 || >=18}
     hasBin: true
-    dev: false
 
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
@@ -2438,6 +2449,14 @@ packages:
       typescript: 5.1.6
     dev: true
 
+  /svelte-sequential-preprocessor@2.0.1:
+    resolution: {integrity: sha512-N5JqlBni6BzElxmuFrOPxOJnjsxh1cFDACLEVKs8OHBcx8ZNRO1p5SxuQex1m3qbLzAC8G99EHeWcxGkjyKjLQ==}
+    engines: {node: '>=16'}
+    dependencies:
+      svelte: 4.0.5
+      tslib: 2.6.0
+    dev: true
+
   /svelte2tsx@0.6.19(svelte@4.0.5)(typescript@5.1.6):
     resolution: {integrity: sha512-h3b5OtcO8zyVL/RiB2zsDwCopeo/UH+887uyhgb2mjnewOFwiTxu+4IGuVwrrlyuh2onM2ktfUemNrNmQwXONQ==}
     peerDependencies:
@@ -2470,7 +2489,6 @@ packages:
 
   /tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
-    dev: false
 
   /tailwind-merge@1.14.0:
     resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
