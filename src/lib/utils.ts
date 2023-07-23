@@ -26,3 +26,23 @@ export function scrollIntoView(e: MouseEvent, offset = 100) {
     behavior: 'smooth',
   });
 }
+
+/**
+ * Type that is used to pass arbitrary MeltUI store to a component. Works
+ * with the preprocessor to assign the store to an element.
+ */
+export type Melted = Record<string, unknown> & { action: (node: HTMLElement) => void };
+
+/**
+ * An helper function that returns a default value for Melted. It is used
+ * to avoid null checks when using Melted.
+ */
+export function resolveMelted(melted?: Melted) {
+  return (
+    melted ?? {
+      action: () => {
+        /** no-op **/
+      },
+    }
+  );
+}
