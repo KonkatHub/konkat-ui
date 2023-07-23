@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createCheckbox } from '@melt-ui/svelte';
-  import { boxVariants } from '.';
-  import { cn } from '$lib/utils';
+  import { boxVariants } from './index.js';
+  import { cn } from '$lib/utils.js';
   import type { VariantProps } from 'class-variance-authority';
   import type { SvelteHTMLElements } from 'svelte/elements';
 

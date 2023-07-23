@@ -1,10 +1,26 @@
 <script lang="ts">
   import Prism from 'prismjs';
+  import 'prismjs/components/prism-bash';
+  import 'prismjs/components/prism-typescript.js';
+  import 'prismjs/components/prism-css.js';
+  import 'prismjs/components/prism-markup.js';
   import 'prism-svelte';
   import Button from '$lib/components/button/Button.svelte';
+  import { capitalizeFirstLetter } from './utils';
 
   export let code: string;
   export let metadata: string[] | string | undefined = undefined;
+  export let language: 'svelte' | 'bash' | 'javascript' | 'typescript' | 'css' | 'markup';
+
+  const html = Prism.highlight(code, Prism.languages[language], language);
+
+  if (Array.isArray(metadata)) {
+    metadata = [capitalizeFirstLetter(language), ...metadata];
+  } else if (typeof metadata === 'string') {
+    metadata = [capitalizeFirstLetter(language), metadata];
+  } else {
+    metadata = capitalizeFirstLetter(language);
+  }
 
   function copyToClipboard() {
     navigator.clipboard.writeText(code);
@@ -22,7 +38,7 @@
         {:else if metadata.length > 1}
           {#each metadata as data, index}
             {#if index > 0}
-              <div class="h-6 border-l border-base-100" />
+              <div class="h-6 border-l border-neutral-focus/30" />
             {/if}
             <span>{data}</span>
           {/each}
@@ -47,6 +63,6 @@
       : 'border-t-0'} border-base-500 bg-base-200 p-4"
   >
     <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-    {@html Prism.highlight(code, Prism.languages.svelte, 'svelte')}
+    {@html html}
   </code>
 </div>
