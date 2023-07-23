@@ -58,10 +58,9 @@
 <div class="flex items-center justify-center">
   <span class="group">
     <button
-      {...$root}
+      melt={$root}
       {disabled}
       class={cn(boxVariants({ theme, size, className }))}
-      use:root.action
       {id}
       {...$$restProps}
     >
@@ -70,7 +69,7 @@
       {:else if $isChecked}
         <iconify-icon icon="ic:round-check" width="24" height="24" />
       {/if}
-      <input {...$input} />
+      <input melt={$input} />
     </button>
   </span>
   <label class="pl-2 {disabled ? 'cursor-not-allowed' : 'cursor-pointer'}" for={id}>
