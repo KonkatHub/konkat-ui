@@ -22,7 +22,7 @@
         {:else if metadata.length > 1}
           {#each metadata as data, index}
             {#if index > 0}
-              <div class="h-6 border-l border-neutral-900/20" />
+              <div class="h-6 border-l border-base-100" />
             {/if}
             <span>{data}</span>
           {/each}

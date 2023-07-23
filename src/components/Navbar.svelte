@@ -14,7 +14,7 @@
 >
   <div>
     <a href="/" class="text-2xl font-bold">
-      <h3 class="text-mathis-base">Konkat/UI</h3>
+      <h3>Konkat/UI</h3>
     </a>
   </div>
   <div class="flex items-center gap-2">
