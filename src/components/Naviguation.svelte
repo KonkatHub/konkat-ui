@@ -11,16 +11,8 @@
           text: 'Installation',
         },
         {
-          href: '/usage',
-          text: 'Usage',
-        },
-        {
           href: '/customization',
           text: 'Customization',
-        },
-        {
-          href: '/faq',
-          text: 'FAQ',
         },
       ],
     },

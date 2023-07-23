@@ -1,6 +1,6 @@
 <script lang="ts">
   import { inview } from 'svelte-inview';
-  import { scrollIntoView } from '$lib/utils';
+  import { scrollIntoView } from '$lib/utils.js';
 
   export let title: string;
   export let id: string;
