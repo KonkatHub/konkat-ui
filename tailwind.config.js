@@ -7,12 +7,18 @@ export default {
         textColor: ['group-hover'],
       },
       colors: {
+        background: 'rgb(var(--konkat-background))',
+        text: 'rgb(var(--konkat-text))',
+        border: 'rgb(var(--konkat-border))',
         base: {
           100: 'rgb(var(--konkat-base-100) / <alpha-value>)',
           200: 'rgb(var(--konkat-base-200) / <alpha-value>)',
           300: 'rgb(var(--konkat-base-300) / <alpha-value>)',
           400: 'rgb(var(--konkat-base-400) / <alpha-value>)',
           500: 'rgb(var(--konkat-base-500) / <alpha-value>)',
+          DEFAULT: 'rgb(var(--konkat-base) / <alpha-value>)',
+          focus: 'rgb(var(--konkat-base-focus) / <alpha-value>)',
+          content: 'rgb(var(--konkat-base-content) / <alpha-value>)',
         },
         neutral: {
           50: 'rgb(var(--konkat-neutral-50) / <alpha-value>)',
@@ -26,6 +32,9 @@ export default {
           800: 'rgb(var(--konkat-neutral-800) / <alpha-value>)',
           900: 'rgb(var(--konkat-neutral-900) / <alpha-value>)',
           950: 'rgb(var(--konkat-neutral-950) / <alpha-value>)',
+          DEFAULT: 'rgb(var(--konkat-neutral) / <alpha-value>)',
+          focus: 'rgb(var(--konkat-neutral-focus) / <alpha-value>)',
+          content: 'rgb(var(--konkat-neutral-content) / <alpha-value>)',
         },
         primary: {
           50: 'rgb(var(--konkat-primary-50) / <alpha-value>)',
@@ -39,6 +48,9 @@ export default {
           800: 'rgb(var(--konkat-primary-800) / <alpha-value>)',
           900: 'rgb(var(--konkat-primary-900) / <alpha-value>)',
           950: 'rgb(var(--konkat-primary-950) / <alpha-value>)',
+          DEFAULT: 'rgb(var(--konkat-primary) / <alpha-value>)',
+          focus: 'rgb(var(--konkat-primary-focus) / <alpha-value>)',
+          content: 'rgb(var(--konkat-primary-content) / <alpha-value>)',
         },
         secondary: {
           50: 'rgb(var(--konkat-secondary-50) / <alpha-value>)',
@@ -52,6 +64,9 @@ export default {
           800: 'rgb(var(--konkat-secondary-800) / <alpha-value>)',
           900: 'rgb(var(--konkat-secondary-900) / <alpha-value>)',
           950: 'rgb(var(--konkat-secondary-950) / <alpha-value>)',
+          DEFAULT: 'rgb(var(--konkat-secondary) / <alpha-value>)',
+          focus: 'rgb(var(--konkat-secondary-focus) / <alpha-value>)',
+          content: 'rgb(var(--konkat-secondary-content) / <alpha-value>)',
         },
         accent: {
           50: 'rgb(var(--konkat-accent-50) / <alpha-value>)',
@@ -65,6 +80,9 @@ export default {
           800: 'rgb(var(--konkat-accent-800) / <alpha-value>)',
           900: 'rgb(var(--konkat-accent-900) / <alpha-value>)',
           950: 'rgb(var(--konkat-accent-950) / <alpha-value>)',
+          DEFAULT: 'rgb(var(--konkat-accent) / <alpha-value>)',
+          focus: 'rgb(var(--konkat-accent-focus) / <alpha-value>)',
+          content: 'rgb(var(--konkat-accent-content) / <alpha-value>)',
         },
         destructive: {
           50: 'rgb(var(--konkat-destructive-50) / <alpha-value>)',
@@ -78,6 +96,9 @@ export default {
           800: 'rgb(var(--konkat-destructive-800) / <alpha-value>)',
           900: 'rgb(var(--konkat-destructive-900) / <alpha-value>)',
           950: 'rgb(var(--konkat-destructive-950) / <alpha-value>)',
+          DEFAULT: 'rgb(var(--konkat-destructive) / <alpha-value>)',
+          focus: 'rgb(var(--konkat-destructive-focus) / <alpha-value>)',
+          content: 'rgb(var(--konkat-destructive-content) / <alpha-value>)',
         },
       },
     },
