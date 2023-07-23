@@ -60,7 +60,7 @@
   <DocSection title="CSS" id="css">
     <svelte:fragment slot="description">
       You will need to add <CodeInline>CSS</CodeInline> variables to your project. You can do this by
-      adding the following line to your <CodeInline>app.postcss</CodeInline> file:
+      adding the following line to your <CodeInline>src/app.postcss</CodeInline> file:
     </svelte:fragment>
     <Codeblock code={data.css} language="css" />
   </DocSection>

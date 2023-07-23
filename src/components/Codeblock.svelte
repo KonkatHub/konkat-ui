@@ -3,13 +3,14 @@
   import 'prismjs/components/prism-bash';
   import 'prismjs/components/prism-typescript.js';
   import 'prismjs/components/prism-css.js';
+  import 'prismjs/components/prism-markup.js';
   import 'prism-svelte';
   import Button from '$lib/components/button/Button.svelte';
   import { capitalizeFirstLetter } from './utils';
 
   export let code: string;
   export let metadata: string[] | string | undefined = undefined;
-  export let language: 'svelte' | 'bash' | 'javascript' | 'typescript' | 'css';
+  export let language: 'svelte' | 'bash' | 'javascript' | 'typescript' | 'css' | 'markup';
 
   const html = Prism.highlight(code, Prism.languages[language], language);
 

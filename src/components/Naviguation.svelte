@@ -25,10 +25,6 @@
           href: '/button',
           text: 'Button',
         },
-        {
-          href: '/checkbox',
-          text: 'Checkbox',
-        },
       ],
     },
   ];
