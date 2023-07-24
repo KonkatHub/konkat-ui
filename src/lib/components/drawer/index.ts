@@ -3,6 +3,9 @@ import { setContext, getContext } from 'svelte';
 
 export { default as Drawer } from './Drawer.svelte';
 
+export const titleClasses = 'mb-0 text-lg font-medium text-base-content';
+export const descriptionClasses = 'mb-5 mt-2 leading-normal text-base-content/50';
+
 export type Dialog = ReturnType<typeof createDialog>;
 export type DialogContext = {
   close: Dialog['close'];

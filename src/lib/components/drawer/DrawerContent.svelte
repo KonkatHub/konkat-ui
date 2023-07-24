@@ -1,11 +1,16 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
-  import { drawerContext } from '.';
+  import { descriptionClasses, drawerContext, titleClasses } from '.';
   import { Button } from '../button';
 
   let className: string | undefined | null = undefined;
   export { className as class };
   export let hideCloseButton = false;
+
+  let titleContent: string | undefined = undefined;
+  export { titleContent as title };
+  let descriptionContent: string | undefined = undefined;
+  export { descriptionContent as description };
 
   const { get } = drawerContext();
   const { close, title, description } = get('DrawerContent');
@@ -25,7 +30,13 @@
   </slot>
 {/if}
 <div class={cn('flex flex-col gap-2', className)}>
-  <slot name="title" defaults={{ class: 'mb-0 text-lg font-medium text-base-content' }} />
-  <slot name="description" defaults={{ class: 'mb-5 mt-2 leading-normal text-base-content/50' }} />
+  {#if titleContent}
+    <h2 melt={$title} class={titleClasses}>{titleContent}</h2>
+  {/if}
+  {#if descriptionContent}
+    <p melt={$description} class={descriptionClasses}>
+      {descriptionContent}
+    </p>
+  {/if}
   <slot />
 </div>

@@ -2,7 +2,7 @@
   import { createDialog } from '@melt-ui/svelte';
   import { fade, fly } from 'svelte/transition';
   import { cn } from '$lib/utils';
-  import { drawerContext } from '.';
+  import { descriptionClasses, drawerContext, titleClasses } from '.';
 
   const { trigger, portal, overlay, content, title, description, close, open } = createDialog();
 
@@ -18,7 +18,7 @@
   $: $open = isOpen;
 </script>
 
-<slot trigger={$trigger} />
+<slot states={{ trigger: $trigger }} />
 <div use:portal>
   {#if $open}
     <div
@@ -40,10 +40,18 @@
     >
       <slot
         name="content"
-        builders={{
+        elements={{
+          title: {
+            class: titleClasses,
+            melt: $title,
+          },
+          description: {
+            class: descriptionClasses,
+            melt: $description,
+          },
+        }}
+        states={{
           close: $close,
-          title: $title,
-          description: $description,
         }}
       />
     </div>
