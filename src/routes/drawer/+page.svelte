@@ -7,13 +7,11 @@
 <div class="flex h-screen w-screen items-center justify-center">
   <Drawer let:trigger>
     <Button melted={trigger}>Open Drawer</Button>
-    <DrawerContent slot="content" let:close>
-      <svelte:fragment slot="title">Title</svelte:fragment>
-      <svelte:fragment slot="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident exercitationem nesciunt
-        tenetur ut aperiam ullam impedit consequatur explicabo inventore aspernatur dignissimos at,
-        pariatur natus. Nulla sed molestiae quis deleniti aut!
-      </svelte:fragment>
+    <DrawerContent slot="content" let:builders={{ close, title, description }}>
+      <h2 slot="title" let:defaults melt={title} class={defaults.class}>Title</h2>
+      <p slot="description" let:defaults melt={description} class={defaults.class}>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </p>
       <Button melted={close}>Will close</Button>
     </DrawerContent>
   </Drawer>

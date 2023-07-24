@@ -9,23 +9,23 @@
 
   const { get } = drawerContext();
   const { close, title, description } = get('DrawerContent');
+
+  const defaults = {
+    class: 'absolute right-2 top-2',
+    icon: 'ph:x',
+    height: '20px',
+  };
 </script>
 
 {#if !hideCloseButton}
-  <Button melted={$close} shape="square" variant="ghost" class="absolute right-2 top-2">
-    <iconify-icon icon="ph:x" height="20px" />
-  </Button>
-{/if}
-{#if $$slots.title}
-  <h2 melt={$title} class="mb-0 text-lg font-medium text-base-content">
-    <slot name="title" />
-  </h2>
-{/if}
-{#if $$slots.description}
-  <p melt={$description} class="mb-5 mt-2 leading-normal text-base-content/50">
-    <slot name="description" />
-  </p>
+  <slot name="close" {defaults}>
+    <Button melted={$close} shape="square" variant="ghost" class={defaults.class}>
+      <iconify-icon icon={defaults.icon} height={defaults.height} />
+    </Button>
+  </slot>
 {/if}
 <div class={cn('flex flex-col gap-2', className)}>
-  <slot close={$close} title={$title} description={$description} />
+  <slot name="title" defaults={{ class: 'mb-0 text-lg font-medium text-base-content' }} />
+  <slot name="description" defaults={{ class: 'mb-5 mt-2 leading-normal text-base-content/50' }} />
+  <slot />
 </div>

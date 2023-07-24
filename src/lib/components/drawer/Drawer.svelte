@@ -38,7 +38,14 @@
         opacity: 1,
       }}
     >
-      <slot name="content" close={$close} title={$title} description={$description} />
+      <slot
+        name="content"
+        builders={{
+          close: $close,
+          title: $title,
+          description: $description,
+        }}
+      />
     </div>
   {/if}
 </div>
