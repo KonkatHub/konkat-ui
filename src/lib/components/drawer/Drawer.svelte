@@ -18,7 +18,7 @@
   $: $open = isOpen;
 </script>
 
-<slot trigger={$trigger} close={$close} />
+<slot trigger={$trigger} />
 <div use:portal>
   {#if $open}
     <div

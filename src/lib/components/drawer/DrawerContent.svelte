@@ -26,6 +26,6 @@
     <slot name="description" />
   </p>
 {/if}
-<div class={cn('mt-6 flex flex-col gap-2', className)}>
-  <slot close={$close} />
+<div class={cn('flex flex-col gap-2', className)}>
+  <slot close={$close} title={$title} description={$description} />
 </div>

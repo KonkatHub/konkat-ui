@@ -14,7 +14,7 @@
         tenetur ut aperiam ullam impedit consequatur explicabo inventore aspernatur dignissimos at,
         pariatur natus. Nulla sed molestiae quis deleniti aut!
       </svelte:fragment>
-      <Button melted={close} theme="primary">Will close</Button>
+      <Button melted={close}>Will close</Button>
     </DrawerContent>
   </Drawer>
 </div>
