@@ -2,18 +2,12 @@
   import Button from '$lib/components/button/Button.svelte';
   import Drawer from '$lib/components/drawer/Drawer.svelte';
   import DrawerContent from '$lib/components/drawer/DrawerContent.svelte';
+  import Link from '$lib/components/link/Link.svelte';
   import { writable } from 'svelte/store';
-
-  const isOpen = writable(false);
-
-  function closeAfter1s() {
-    $isOpen = true;
-    setTimeout(() => ($isOpen = false), 1000);
-  }
 </script>
 
 <div class="flex h-screen w-screen items-center justify-center">
-  <Drawer let:states={{ trigger }} isOpen={$isOpen}>
+  <Drawer let:states={{ trigger }}>
     <Button melted={trigger}>Open Drawer</Button>
     <DrawerContent
       slot="content"
@@ -27,15 +21,25 @@
 
   <Drawer let:states={{ trigger }}>
     <Button melted={trigger}>Open Drawer</Button>
-    <DrawerContent slot="content" let:elements={{ title, description }}>
-      <h2 melt={title.melt} class={title.class}>My Title</h2>
-      <p melt={description.melt} class={description.class}>
+    <DrawerContent slot="content" title="My Title" let:states={{ close }}>
+      <svelte:fragment slot="description">
+        Lorem <Link blank href="https://github.com/KonkatHub/konkat-ui">ipsum</Link> dolor sit, amet
+        consectetur adipisicing elit.
+      </svelte:fragment>
+      <Button melted={close}>Will close</Button>
+    </DrawerContent>
+  </Drawer>
+
+  <Drawer let:states={{ trigger }}>
+    <Button melted={trigger}>Open Drawer</Button>
+    <DrawerContent slot="content" let:states={{ setOpen }}>
+      <svelte:fragment slot="title">My Title</svelte:fragment>
+      <svelte:fragment slot="description">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      </p>
+      </svelte:fragment>
       <Button
         on:click={() => {
-          $isOpen = true;
-          new Promise(closeAfter1s);
+          setTimeout(() => setOpen(false), 1000);
         }}
       >
         Will close after 1s

@@ -1,19 +1,45 @@
+<script lang="ts" context="module">
+  type OverlayOptions = {
+    class?: string | undefined | null;
+    duration?: number;
+  };
+
+  type DrawerOptions = {
+    class?: string | undefined | null;
+    x?: number;
+    duration?: number;
+    opacity?: number;
+  };
+</script>
+
 <script lang="ts">
   import { createDialog } from '@melt-ui/svelte';
   import { fade, fly } from 'svelte/transition';
   import { cn } from '$lib/utils';
-  import { descriptionClasses, drawerContext, titleClasses } from '.';
+  import { drawerContext } from '.';
 
-  const { trigger, portal, overlay, content, title, description, close, open } = createDialog();
+  const {
+    trigger,
+    portal,
+    overlay: meltOverlay,
+    content,
+    title,
+    description,
+    close,
+    open,
+  } = createDialog();
 
-  let className: string | undefined | null = undefined;
-  export { className as class };
-  export let overlayClass: string | undefined | null = undefined;
+  export let overlay: OverlayOptions = {};
+  export let drawer: DrawerOptions = {};
 
   export let isOpen = false;
 
   const { set } = drawerContext();
   set({ close, title, description });
+
+  function setOpen(value: boolean) {
+    $open = value;
+  }
 
   $: $open = isOpen;
 </script>
@@ -22,36 +48,33 @@
 <div use:portal>
   {#if $open}
     <div
-      melt={$overlay}
-      class={cn('fixed inset-0 z-20 bg-black/50', overlayClass)}
-      transition:fade={{ duration: 200 }}
+      melt={$meltOverlay}
+      class={cn('fixed inset-0 z-20 bg-black/50', overlay.class)}
+      transition:fade={{
+        duration: overlay.duration ?? 200,
+      }}
     />
     <div
       melt={$content}
       class={cn(
         'fixed left-0 top-0 z-50 h-screen w-full max-w-[350px] bg-background p-4 shadow-lg focus:outline-none',
-        className
+        drawer.class
       )}
       transition:fly={{
-        x: -350,
-        duration: 400,
-        opacity: 1,
+        x: drawer.x ?? -350,
+        duration: drawer.duration ?? 400,
+        opacity: drawer.opacity ?? 1,
       }}
     >
       <slot
         name="content"
         elements={{
-          title: {
-            class: titleClasses,
-            melt: $title,
-          },
-          description: {
-            class: descriptionClasses,
-            melt: $description,
-          },
+          title: $title,
+          description: $description,
         }}
         states={{
           close: $close,
+          setOpen,
         }}
       />
     </div>
