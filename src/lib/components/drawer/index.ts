@@ -2,6 +2,7 @@ import type { createDialog } from '@melt-ui/svelte';
 import { setContext, getContext } from 'svelte';
 
 export { default as Drawer } from './Drawer.svelte';
+export { default as DrawerContent } from './DrawerContent.svelte';
 
 export type Dialog = ReturnType<typeof createDialog>;
 export type DialogContext = {

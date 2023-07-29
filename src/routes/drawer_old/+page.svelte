@@ -3,7 +3,6 @@
   import Drawer from '$lib/components/drawer/Drawer.svelte';
   import DrawerContent from '$lib/components/drawer/DrawerContent.svelte';
   import Link from '$lib/components/link/Link.svelte';
-  import { writable } from 'svelte/store';
 </script>
 
 <div class="flex h-screen w-screen items-center justify-center">

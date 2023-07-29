@@ -11,6 +11,7 @@
   export let code: string;
   export let metadata: string[] | string | undefined = undefined;
   export let language: 'svelte' | 'bash' | 'javascript' | 'typescript' | 'css' | 'markup';
+  export let slotContainer = true;
 
   const html = Prism.highlight(code, Prism.languages[language], language);
 
@@ -54,7 +55,13 @@
   </div>
   {#if $$slots.default}
     <div class="border-x border-base-500">
-      <slot />
+      {#if slotContainer}
+        <div class="flex w-full flex-wrap items-center justify-center gap-2 p-4">
+          <slot />
+        </div>
+      {:else}
+        <slot />
+      {/if}
     </div>
   {/if}
   <code
