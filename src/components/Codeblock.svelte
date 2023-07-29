@@ -65,7 +65,7 @@
     </div>
   {/if}
   <code
-    class="whitespace-pre-wrap rounded-b-xl border {$$slots.default
+    class="overflow-x-auto whitespace-pre rounded-b-xl border {$$slots.default
       ? 'bordor-t'
       : 'border-t-0'} border-base-500 bg-base-200 p-4"
   >
