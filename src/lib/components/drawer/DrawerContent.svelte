@@ -30,11 +30,15 @@
   </slot>
 {/if}
 <div class={cn('flex flex-col gap-2', className)}>
-  <h2 melt={$title} class="mb-0 text-lg font-medium text-base-content">
-    <slot name="title">{titleContent}</slot>
-  </h2>
-  <p melt={$description} class="mb-5 mt-2 leading-normal text-base-content/50">
-    <slot name="description">{descriptionContent}</slot>
-  </p>
+  {#if titleContent || $$slots.title}
+    <h2 melt={$title} class="mb-0 text-lg font-medium text-base-content">
+      <slot name="title">{titleContent}</slot>
+    </h2>
+  {/if}
+  {#if descriptionContent || $$slots.description}
+    <p melt={$description} class="mb-5 mt-2 leading-normal text-base-content/50">
+      <slot name="description">{descriptionContent}</slot>
+    </p>
+  {/if}
   <slot />
 </div>

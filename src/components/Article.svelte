@@ -13,6 +13,6 @@
     <slot />
   </div>
 </article>
-<aside class="w-full sm:w-1/5">
+<aside class="hidden w-full sm:w-1/5 xl:block">
   <Table {links} class="sticky top-28" />
 </aside>
