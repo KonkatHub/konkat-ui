@@ -1,7 +1,7 @@
 <script lang="ts">
   import { buttonVariants, type ButtonProps } from './index.js';
   import type { VariantProps } from 'class-variance-authority';
-  import { cn } from '$lib/utils.js';
+  import { cn, resolveMelted, type Melted } from '$lib/utils.js';
 
   let className: string | undefined | null = undefined;
   export { className as class };
@@ -10,6 +10,9 @@
   export let shape: VariantProps<typeof buttonVariants>['shape'] = undefined;
   export let size: VariantProps<typeof buttonVariants>['size'] = undefined;
   export let active = false;
+  export let melted: Melted | undefined = undefined;
+
+  $: resolvedMelted = resolveMelted(melted);
 
   export let type: ButtonProps['type'] = 'button';
   export let href: ButtonProps['href'] = undefined;
@@ -20,6 +23,7 @@
     shape?: VariantProps<typeof buttonVariants>['shape'];
     size?: VariantProps<typeof buttonVariants>['size'];
     active?: boolean;
+    melted?: Melted;
   };
 
   type $$Props = ButtonProps & Props;
@@ -32,6 +36,7 @@
   {href}
   class={cn(buttonVariants({ theme, variant, shape, size, className }))}
   data-active={active}
+  melt={resolvedMelted}
   {...$$restProps}
   on:click
   on:change

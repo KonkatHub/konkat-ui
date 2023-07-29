@@ -55,14 +55,12 @@
       officiis est sequi atque amet laborum similique.
     </svelte:fragment>
     <Codeblock code={data.themes} language="svelte">
-      <div class="flex w-full flex-wrap items-center justify-center gap-2 p-4">
-        <Button theme="base">Base</Button>
-        <Button theme="neutral">Neutral</Button>
-        <Button theme="primary">Primary</Button>
-        <Button theme="secondary">Secondary</Button>
-        <Button theme="accent">Accent</Button>
-        <Button theme="destructive">Destructive</Button>
-      </div>
+      <Button theme="base">Base</Button>
+      <Button theme="neutral">Neutral</Button>
+      <Button theme="primary">Primary</Button>
+      <Button theme="secondary">Secondary</Button>
+      <Button theme="accent">Accent</Button>
+      <Button theme="destructive">Destructive</Button>
     </Codeblock>
   </DocSection>
   <DocSection title="Active" id="active">
@@ -72,14 +70,12 @@
       officiis est sequi atque amet laborum similique.
     </svelte:fragment>
     <Codeblock code={data.active} language="svelte">
-      <div class="flex w-full flex-wrap items-center justify-center gap-2 p-4">
-        <Button theme="base" active>Base</Button>
-        <Button theme="neutral" active>Neutral</Button>
-        <Button theme="primary" active>Primary</Button>
-        <Button theme="secondary" active>Secondary</Button>
-        <Button theme="accent" active>Accent</Button>
-        <Button theme="destructive" active>Destructive</Button>
-      </div>
+      <Button theme="base" active>Base</Button>
+      <Button theme="neutral" active>Neutral</Button>
+      <Button theme="primary" active>Primary</Button>
+      <Button theme="secondary" active>Secondary</Button>
+      <Button theme="accent" active>Accent</Button>
+      <Button theme="destructive" active>Destructive</Button>
     </Codeblock>
   </DocSection>
   <DocSection title="Disabled" id="disabled">
@@ -89,14 +85,12 @@
       officiis est sequi atque amet laborum similique.
     </svelte:fragment>
     <Codeblock code={data.disabled} language="svelte">
-      <div class="flex w-full flex-wrap items-center justify-center gap-2 p-4">
-        <Button theme="base" disabled>Base</Button>
-        <Button theme="neutral" disabled>Neutral</Button>
-        <Button theme="primary" disabled>Primary</Button>
-        <Button theme="secondary" disabled>Secondary</Button>
-        <Button theme="accent" disabled>Accent</Button>
-        <Button theme="destructive" disabled>Destructive</Button>
-      </div>
+      <Button theme="base" disabled>Base</Button>
+      <Button theme="neutral" disabled>Neutral</Button>
+      <Button theme="primary" disabled>Primary</Button>
+      <Button theme="secondary" disabled>Secondary</Button>
+      <Button theme="accent" disabled>Accent</Button>
+      <Button theme="destructive" disabled>Destructive</Button>
     </Codeblock>
   </DocSection>
   <DocSection title="Variants" id="variants">
@@ -106,12 +100,10 @@
       officiis est sequi atque amet laborum similique.
     </svelte:fragment>
     <Codeblock code={data.variants} language="svelte">
-      <div class="flex items-center justify-center gap-2 p-4">
-        <Button variant="outline">Outline</Button>
-        <Button variant="flat">Flat</Button>
-        <Button variant="ghost">Ghost</Button>
-        <Button variant="link">Link</Button>
-      </div>
+      <Button variant="outline">Outline</Button>
+      <Button variant="flat">Flat</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="link">Link</Button>
     </Codeblock>
   </DocSection>
   <DocSection title="Sizes" id="sizes">
@@ -121,12 +113,10 @@
       officiis est sequi atque amet laborum similique.
     </svelte:fragment>
     <Codeblock code={data.sizes} language="svelte">
-      <div class="flex items-center justify-center gap-2 p-4">
-        <Button size="xs">Tiny</Button>
-        <Button size="sm">Small</Button>
-        <Button size="md">Medium</Button>
-        <Button size="lg">Large</Button>
-      </div>
+      <Button size="xs">Tiny</Button>
+      <Button size="sm">Small</Button>
+      <Button size="md">Medium</Button>
+      <Button size="lg">Large</Button>
     </Codeblock>
   </DocSection>
   <DocSection title="Shapes" id="shapes">
@@ -136,16 +126,14 @@
       officiis est sequi atque amet laborum similique.
     </svelte:fragment>
     <Codeblock code={data.shapes} language="svelte">
-      <div class="flex items-center justify-center gap-2 p-4">
-        <Button>Button</Button>
-        <Button shape="pill">Button</Button>
-        <Button shape="square">
-          <iconify-icon icon="mdi:check" width="24" />
-        </Button>
-        <Button shape="circle">
-          <iconify-icon icon="mdi:check" width="24" />
-        </Button>
-      </div>
+      <Button>Button</Button>
+      <Button shape="pill">Button</Button>
+      <Button shape="square">
+        <iconify-icon icon="mdi:check" width="24" />
+      </Button>
+      <Button shape="circle">
+        <iconify-icon icon="mdi:check" width="24" />
+      </Button>
     </Codeblock>
   </DocSection>
   <DocSection title="Icons" id="icons">
@@ -155,16 +143,14 @@
       officiis est sequi atque amet laborum similique.
     </svelte:fragment>
     <Codeblock code={data.icons} language="svelte">
-      <div class="flex items-center justify-center gap-2 p-4">
-        <Button>
-          <iconify-icon icon="mdi:cart" width="20" />
-          Checkout
-        </Button>
-        <Button>
-          Checkout
-          <iconify-icon icon="mdi:cart" width="20" />
-        </Button>
-      </div>
+      <Button>
+        <iconify-icon icon="mdi:cart" width="20" />
+        Checkout
+      </Button>
+      <Button>
+        Checkout
+        <iconify-icon icon="mdi:cart" width="20" />
+      </Button>
     </Codeblock>
   </DocSection>
   <DocSection title="Element" id="element">
@@ -174,12 +160,10 @@
       officiis est sequi atque amet laborum similique.
     </svelte:fragment>
     <Codeblock code={data.element} language="svelte">
-      <div class="flex items-center justify-center gap-2 p-4">
-        <Button href="https://github.com/KonkatHub/konkat-ui" target="_blank">
-          Github
-          <iconify-icon icon="mdi:open-in-new" width="18" />
-        </Button>
-      </div>
+      <Button href="https://github.com/KonkatHub/konkat-ui" target="_blank">
+        Github
+        <iconify-icon icon="mdi:open-in-new" width="18" />
+      </Button>
     </Codeblock>
   </DocSection>
   <DocSection title="Events" id="events">

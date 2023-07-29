@@ -26,7 +26,9 @@
     <div class="my-2 block w-full border-b" />
   {:else}
     <div
-      class="mb-2 ml-3 {index > 0 ? 'mt-4' : 'mt-0'} flex items-center gap-2 text-base-content/50"
+      class="mb-2 ml-2 lg:ml-3 {index > 0
+        ? 'mt-4'
+        : 'mt-0'} flex items-center gap-2 text-base-content/50"
     >
       <iconify-icon width="24" height="24" icon={section.icon} />
       <h4>{section.title}</h4>
@@ -37,7 +39,7 @@
         <li>
           <Button
             href={link.href}
-            size={'sm'}
+            size="sm"
             variant="ghost"
             active={isSelected}
             class="w-full justify-start {isSelected ? 'pointer-events-none' : ''}"
