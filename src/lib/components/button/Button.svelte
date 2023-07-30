@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { buttonVariants, type ButtonProps } from './index.js';
+  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+  import { buttonVariants } from './index.js';
   import type { VariantProps } from 'class-variance-authority';
   import { cn, resolveMelted, type Melted } from '$lib/utils.js';
 
@@ -14,19 +15,8 @@
 
   $: resolvedMelted = resolveMelted(melted);
 
-  export let type: ButtonProps['type'] = 'button';
-  export let href: ButtonProps['href'] = undefined;
-
-  type Props = {
-    theme?: VariantProps<typeof buttonVariants>['theme'];
-    variant?: VariantProps<typeof buttonVariants>['variant'];
-    shape?: VariantProps<typeof buttonVariants>['shape'];
-    size?: VariantProps<typeof buttonVariants>['size'];
-    active?: boolean;
-    melted?: Melted;
-  };
-
-  type $$Props = ButtonProps & Props;
+  export let type: HTMLButtonAttributes['type'] = 'button';
+  export let href: HTMLAnchorAttributes['href'] = undefined;
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->

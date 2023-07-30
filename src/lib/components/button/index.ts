@@ -1,17 +1,5 @@
 import { cva } from 'class-variance-authority';
-import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
-interface AnchorElement extends HTMLAnchorAttributes {
-  href?: HTMLAnchorAttributes['href'];
-  type?: never;
-}
-
-interface ButtonElement extends HTMLButtonAttributes {
-  type?: HTMLButtonAttributes['type'];
-  href?: never;
-}
-
-export type ButtonProps = AnchorElement | ButtonElement;
 export { default as Button } from './Button.svelte';
 
 export const buttonVariants = cva(
