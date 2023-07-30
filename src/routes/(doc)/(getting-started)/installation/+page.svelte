@@ -22,12 +22,8 @@
       text: 'Installation',
     },
     {
-      href: '#tailwind-configuration',
-      text: 'Tailwind configuration',
-    },
-    {
-      href: '#css',
-      text: 'CSS',
+      href: '#tailwind-plugin',
+      text: 'Tailwind plugin',
     },
   ];
 </script>
@@ -61,18 +57,25 @@
     </svelte:fragment>
     <Codeblock code={data.install} language="bash" />
   </DocSection>
-  <DocSection title="Tailwind configuration" id="tailwind-configuration">
+  <DocSection title="Tailwind plugin" id="tailwind-plugin">
     <svelte:fragment slot="description">
-      You will need to add the following <CodeInline>extends</CodeInline> to your
-      <CodeInline>Tailwind</CodeInline> config.
+      You will need to add <CodeInline>Konkat/UI</CodeInline>'s plugin to your Tailwind plugins.
+      This plugin will inject css variables into your project and will extends your Tailwind
+      configuration to add more utility classes.
+      <ul class="my-2 ml-4 list-disc">
+        <li>
+          <CodeInline>konkatPlugin</CodeInline>: Contains the Tailwind plugin.
+        </li>
+        <li>
+          <CodeInline>konkatContent</CodeInline>: Contains the path to
+          <CodeInline>Konkat/UI</CodeInline> files so that the Tailwind compiler can extract the utility
+          classes used. (path =
+          <CodeInline>./node_modules/@konkat/konkat-ui/**/*.{'{html,js,svelte,ts}'}</CodeInline>)
+        </li>
+      </ul>
+      You can do this by modifing you
+      <CodeInline>tailwind.config.js</CodeInline> file:
     </svelte:fragment>
-    <Codeblock code={data.tailwind} language="javascript" />
-  </DocSection>
-  <DocSection title="CSS" id="css">
-    <svelte:fragment slot="description">
-      You will need to add <CodeInline>CSS</CodeInline> variables to your project. You can do this by
-      adding the following line to your <CodeInline>src/app.postcss</CodeInline> file:
-    </svelte:fragment>
-    <Codeblock code={data.css} language="css" />
+    <Codeblock code={data.plugin} language="javascript" />
   </DocSection>
 </Article>
