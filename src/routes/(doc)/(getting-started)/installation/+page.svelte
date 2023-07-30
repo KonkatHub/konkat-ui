@@ -22,6 +22,10 @@
       text: 'Installation',
     },
     {
+      href: '#tailwind-configuration',
+      text: 'Tailwind configuration',
+    },
+    {
       href: '#css',
       text: 'CSS',
     },
@@ -56,6 +60,13 @@
       To install <CodeInline>Konkat/UI</CodeInline>, run the following command:
     </svelte:fragment>
     <Codeblock code={data.install} language="bash" />
+  </DocSection>
+  <DocSection title="Tailwind configuration" id="tailwind-configuration">
+    <svelte:fragment slot="description">
+      You will need to add the following <CodeInline>extends</CodeInline> to your
+      <CodeInline>Tailwind</CodeInline> config.
+    </svelte:fragment>
+    <Codeblock code={data.tailwind} language="javascript" />
   </DocSection>
   <DocSection title="CSS" id="css">
     <svelte:fragment slot="description">
