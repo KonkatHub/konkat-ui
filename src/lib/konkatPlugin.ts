@@ -1,7 +1,8 @@
 import plugin from 'tailwindcss/plugin';
 
+export const konkatContent = './node_modules/@konkat/konkat-ui/**/*.{html,js,svelte,ts}';
+
 export const konkatPlugin = plugin(
-  // 1. Add base styles
   function ({ addBase }) {
     addBase({
       ':root, [data-theme="konkat"]': {
@@ -202,5 +203,109 @@ export const konkatPlugin = plugin(
         borderColor: 'rgb(var(--konkat-border))',
       },
     });
+  },
+  {
+    theme: {
+      extend: {
+        extend: {
+          textColor: ['group-hover'],
+        },
+        colors: {
+          background: 'rgb(var(--konkat-background))',
+          text: 'rgb(var(--konkat-text))',
+          border: 'rgb(var(--konkat-border))',
+          base: {
+            100: 'rgb(var(--konkat-base-100) / <alpha-value>)',
+            200: 'rgb(var(--konkat-base-200) / <alpha-value>)',
+            300: 'rgb(var(--konkat-base-300) / <alpha-value>)',
+            400: 'rgb(var(--konkat-base-400) / <alpha-value>)',
+            500: 'rgb(var(--konkat-base-500) / <alpha-value>)',
+            DEFAULT: 'rgb(var(--konkat-base) / <alpha-value>)',
+            focus: 'rgb(var(--konkat-base-focus) / <alpha-value>)',
+            content: 'rgb(var(--konkat-base-content) / <alpha-value>)',
+          },
+          neutral: {
+            50: 'rgb(var(--konkat-neutral-50) / <alpha-value>)',
+            100: 'rgb(var(--konkat-neutral-100) / <alpha-value>)',
+            200: 'rgb(var(--konkat-neutral-200) / <alpha-value>)',
+            300: 'rgb(var(--konkat-neutral-300) / <alpha-value>)',
+            400: 'rgb(var(--konkat-neutral-400) / <alpha-value>)',
+            500: 'rgb(var(--konkat-neutral-500) / <alpha-value>)',
+            600: 'rgb(var(--konkat-neutral-600) / <alpha-value>)',
+            700: 'rgb(var(--konkat-neutral-700) / <alpha-value>)',
+            800: 'rgb(var(--konkat-neutral-800) / <alpha-value>)',
+            900: 'rgb(var(--konkat-neutral-900) / <alpha-value>)',
+            950: 'rgb(var(--konkat-neutral-950) / <alpha-value>)',
+            DEFAULT: 'rgb(var(--konkat-neutral) / <alpha-value>)',
+            focus: 'rgb(var(--konkat-neutral-focus) / <alpha-value>)',
+            content: 'rgb(var(--konkat-neutral-content) / <alpha-value>)',
+          },
+          primary: {
+            50: 'rgb(var(--konkat-primary-50) / <alpha-value>)',
+            100: 'rgb(var(--konkat-primary-100) / <alpha-value>)',
+            200: 'rgb(var(--konkat-primary-200) / <alpha-value>)',
+            300: 'rgb(var(--konkat-primary-300) / <alpha-value>)',
+            400: 'rgb(var(--konkat-primary-400) / <alpha-value>)',
+            500: 'rgb(var(--konkat-primary-500) / <alpha-value>)',
+            600: 'rgb(var(--konkat-primary-600) / <alpha-value>)',
+            700: 'rgb(var(--konkat-primary-700) / <alpha-value>)',
+            800: 'rgb(var(--konkat-primary-800) / <alpha-value>)',
+            900: 'rgb(var(--konkat-primary-900) / <alpha-value>)',
+            950: 'rgb(var(--konkat-primary-950) / <alpha-value>)',
+            DEFAULT: 'rgb(var(--konkat-primary) / <alpha-value>)',
+            focus: 'rgb(var(--konkat-primary-focus) / <alpha-value>)',
+            content: 'rgb(var(--konkat-primary-content) / <alpha-value>)',
+          },
+          secondary: {
+            50: 'rgb(var(--konkat-secondary-50) / <alpha-value>)',
+            100: 'rgb(var(--konkat-secondary-100) / <alpha-value>)',
+            200: 'rgb(var(--konkat-secondary-200) / <alpha-value>)',
+            300: 'rgb(var(--konkat-secondary-300) / <alpha-value>)',
+            400: 'rgb(var(--konkat-secondary-400) / <alpha-value>)',
+            500: 'rgb(var(--konkat-secondary-500) / <alpha-value>)',
+            600: 'rgb(var(--konkat-secondary-600) / <alpha-value>)',
+            700: 'rgb(var(--konkat-secondary-700) / <alpha-value>)',
+            800: 'rgb(var(--konkat-secondary-800) / <alpha-value>)',
+            900: 'rgb(var(--konkat-secondary-900) / <alpha-value>)',
+            950: 'rgb(var(--konkat-secondary-950) / <alpha-value>)',
+            DEFAULT: 'rgb(var(--konkat-secondary) / <alpha-value>)',
+            focus: 'rgb(var(--konkat-secondary-focus) / <alpha-value>)',
+            content: 'rgb(var(--konkat-secondary-content) / <alpha-value>)',
+          },
+          accent: {
+            50: 'rgb(var(--konkat-accent-50) / <alpha-value>)',
+            100: 'rgb(var(--konkat-accent-100) / <alpha-value>)',
+            200: 'rgb(var(--konkat-accent-200) / <alpha-value>)',
+            300: 'rgb(var(--konkat-accent-300) / <alpha-value>)',
+            400: 'rgb(var(--konkat-accent-400) / <alpha-value>)',
+            500: 'rgb(var(--konkat-accent-500) / <alpha-value>)',
+            600: 'rgb(var(--konkat-accent-600) / <alpha-value>)',
+            700: 'rgb(var(--konkat-accent-700) / <alpha-value>)',
+            800: 'rgb(var(--konkat-accent-800) / <alpha-value>)',
+            900: 'rgb(var(--konkat-accent-900) / <alpha-value>)',
+            950: 'rgb(var(--konkat-accent-950) / <alpha-value>)',
+            DEFAULT: 'rgb(var(--konkat-accent) / <alpha-value>)',
+            focus: 'rgb(var(--konkat-accent-focus) / <alpha-value>)',
+            content: 'rgb(var(--konkat-accent-content) / <alpha-value>)',
+          },
+          destructive: {
+            50: 'rgb(var(--konkat-destructive-50) / <alpha-value>)',
+            100: 'rgb(var(--konkat-destructive-100) / <alpha-value>)',
+            200: 'rgb(var(--konkat-destructive-200) / <alpha-value>)',
+            300: 'rgb(var(--konkat-destructive-300) / <alpha-value>)',
+            400: 'rgb(var(--konkat-destructive-400) / <alpha-value>)',
+            500: 'rgb(var(--konkat-destructive-500) / <alpha-value>)',
+            600: 'rgb(var(--konkat-destructive-600) / <alpha-value>)',
+            700: 'rgb(var(--konkat-destructive-700) / <alpha-value>)',
+            800: 'rgb(var(--konkat-destructive-800) / <alpha-value>)',
+            900: 'rgb(var(--konkat-destructive-900) / <alpha-value>)',
+            950: 'rgb(var(--konkat-destructive-950) / <alpha-value>)',
+            DEFAULT: 'rgb(var(--konkat-destructive) / <alpha-value>)',
+            focus: 'rgb(var(--konkat-destructive-focus) / <alpha-value>)',
+            content: 'rgb(var(--konkat-destructive-content) / <alpha-value>)',
+          },
+        },
+      },
+    },
   }
 );
