@@ -23,6 +23,10 @@ export const docSections: (Section | 'divider')[] = [
         href: '/button',
         text: 'Button',
       },
+      {
+        href: '/drawer',
+        text: 'Drawer',
+      },
     ],
   },
 ];
