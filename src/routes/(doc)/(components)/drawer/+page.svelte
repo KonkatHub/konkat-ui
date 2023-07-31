@@ -5,23 +5,46 @@
   import Codeblock from '$components/Codeblock.svelte';
   import DocSection from '$components/DocSection.svelte';
   import { Drawer, DrawerContent } from '$lib/components/drawer/index.js';
+  import CodeInline from '$components/CodeInline.svelte';
 
   export let data;
 
   const links: LinkInfo[] = [
     {
-      href: '#simplest-example',
-      text: 'Simplest Example',
+      href: '#basic-drawer',
+      text: 'Basic Drawer',
+    },
+    {
+      href: '#components',
+      text: 'Components',
+      child: [
+        {
+          href: '#drawer',
+          text: 'Drawer',
+        },
+        {
+          href: '#drawercontent',
+          text: 'DrawerContent',
+        },
+      ],
     },
   ];
 </script>
 
-<Article title="Button" {links}>
-  <DocSection title="Simplest example" id="simplest-example">
+<Article title="Drawer" {links}>
+  <svelte:fragment slot="description">
+    A drawer provide an effective way to display content that needs to be accessed easily but that
+    is not the main focus of the page
+    <br />
+    <br />
+    Drawers are often used for navigation, search, and data filters. They can also be used to display
+    additional content such as a shopping cart or to provide a form for gathering user information.
+  </svelte:fragment>
+  <DocSection title="Basic Drawer" id="basic-drawer">
     <svelte:fragment slot="description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum asperiores
-      voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum iusto,
-      officiis est sequi atque amet laborum similique.
+      To create a basic drawer, you need to use the <CodeInline>Drawer</CodeInline> component and the
+      <CodeInline>DrawerContent</CodeInline> component. The <CodeInline>DrawerContent</CodeInline> component
+      must be a child of the <CodeInline>Drawer</CodeInline> component or an error will be thrown.
     </svelte:fragment>
     <Codeblock code={data.simplestExample} language="svelte">
       <Drawer let:states={{ trigger }}>
@@ -36,5 +59,12 @@
         </DrawerContent>
       </Drawer>
     </Codeblock>
+  </DocSection>
+  <DocSection title="Components" id="components">
+    <svelte:fragment slot="description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptas optio nemo quas!
+      Officiis commodi illum debitis, magni porro incidunt tempora cupiditate quisquam mollitia iste
+      voluptates, praesentium velit a vel.
+    </svelte:fragment>
   </DocSection>
 </Article>
