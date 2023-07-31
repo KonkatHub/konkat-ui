@@ -1,6 +1,5 @@
 <script lang="ts">
   import Article from '$components/Article.svelte';
-  import type { LinkInfo } from '$components/TableOfContent/Link.svelte';
   import Button from '$lib/components/button/Button.svelte';
   import Codeblock from '$components/Codeblock.svelte';
   import DocSection from '$components/DocSection.svelte';
@@ -8,30 +7,9 @@
   import CodeInline from '$components/CodeInline.svelte';
 
   export let data;
-
-  const links: LinkInfo[] = [
-    {
-      href: '#basic-drawer',
-      text: 'Basic Drawer',
-    },
-    {
-      href: '#components',
-      text: 'Components',
-      child: [
-        {
-          href: '#drawer',
-          text: 'Drawer',
-        },
-        {
-          href: '#drawercontent',
-          text: 'DrawerContent',
-        },
-      ],
-    },
-  ];
 </script>
 
-<Article title="Drawer" {links}>
+<Article title="Drawer">
   <svelte:fragment slot="description">
     A drawer provide an effective way to display content that needs to be accessed easily but that
     is not the main focus of the page
@@ -40,7 +18,7 @@
     Drawers are often used for navigation, search, and data filters. They can also be used to display
     additional content such as a shopping cart or to provide a form for gathering user information.
   </svelte:fragment>
-  <DocSection title="Basic Drawer" id="basic-drawer">
+  <DocSection title="Basic Drawer">
     <svelte:fragment slot="description">
       To create a basic drawer, you need to use the <CodeInline>Drawer</CodeInline> component and the
       <CodeInline>DrawerContent</CodeInline> component. The <CodeInline>DrawerContent</CodeInline> component
@@ -60,7 +38,21 @@
       </Drawer>
     </Codeblock>
   </DocSection>
-  <DocSection title="Components" id="components">
+  <DocSection title="Components" class="mb-0">
+    <svelte:fragment slot="description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptas optio nemo quas!
+      Officiis commodi illum debitis, magni porro incidunt tempora cupiditate quisquam mollitia iste
+      voluptates, praesentium velit a vel.
+    </svelte:fragment>
+  </DocSection>
+  <DocSection title="Drawer" class="mb-0" childLevel={1}>
+    <svelte:fragment slot="description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptas optio nemo quas!
+      Officiis commodi illum debitis, magni porro incidunt tempora cupiditate quisquam mollitia iste
+      voluptates, praesentium velit a vel.
+    </svelte:fragment>
+  </DocSection>
+  <DocSection title="DrawerContent" childLevel={1}>
     <svelte:fragment slot="description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptas optio nemo quas!
       Officiis commodi illum debitis, magni porro incidunt tempora cupiditate quisquam mollitia iste

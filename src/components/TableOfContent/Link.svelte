@@ -18,7 +18,7 @@
 
   export let link: LinkInfo;
   export let isNested = false;
-  export let activeId: Writable<string | null>;
+  export let activeId: Writable<string | null> | undefined = undefined;
 
   const id = crypto.randomUUID();
 </script>
