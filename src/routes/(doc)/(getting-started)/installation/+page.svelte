@@ -3,33 +3,13 @@
   import CodeInline from '$components/CodeInline.svelte';
   import Codeblock from '$components/Codeblock.svelte';
   import DocSection from '$components/DocSection.svelte';
-  import type { LinkInfo } from '$components/TableOfContent/Link.svelte';
   import Link from '$lib/components/link/Link.svelte';
 
   export let data;
-
-  const links: LinkInfo[] = [
-    {
-      href: '#sveltekit',
-      text: 'SvelteKit',
-    },
-    {
-      href: '#dependencies',
-      text: 'Dependencies',
-    },
-    {
-      href: '#installation',
-      text: 'Installation',
-    },
-    {
-      href: '#tailwind-plugin',
-      text: 'Tailwind plugin',
-    },
-  ];
 </script>
 
-<Article title="Installation" {links}>
-  <DocSection title="SvelteKit" id="sveltekit">
+<Article title="Installation">
+  <DocSection title="SvelteKit">
     <svelte:fragment slot="description">
       You will need a <CodeInline>SvelteKit</CodeInline> project to use this library. If you don't have
       one, you can
@@ -38,7 +18,7 @@
     </svelte:fragment>
     <Codeblock code={data.sveltekit} language="bash" />
   </DocSection>
-  <DocSection title="Dependencies" id="dependencies">
+  <DocSection title="Dependencies">
     <svelte:fragment slot="description">
       To use this library, you will need
       <CodeInline>
@@ -51,13 +31,13 @@
     </svelte:fragment>
     <Codeblock code={data.dependencies} language="bash" />
   </DocSection>
-  <DocSection title="Installation" id="installation">
+  <DocSection title="Installation">
     <svelte:fragment slot="description">
       To install <CodeInline>Konkat/UI</CodeInline>, run the following command:
     </svelte:fragment>
     <Codeblock code={data.install} language="bash" />
   </DocSection>
-  <DocSection title="Tailwind plugin" id="tailwind-plugin">
+  <DocSection title="Tailwind plugin">
     <svelte:fragment slot="description">
       You will need to add <CodeInline>Konkat/UI</CodeInline>'s plugin to your Tailwind plugins.
       This plugin will inject css variables into your project and will extends your Tailwind
