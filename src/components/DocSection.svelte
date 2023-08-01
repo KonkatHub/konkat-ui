@@ -15,18 +15,18 @@
 
   function getTitleSize() {
     if (childLevel === 0) {
-      return 'text-3xl';
+      return 'text-4xl';
     } else if (childLevel === 1) {
-      return 'text-2xl';
+      return 'text-3xl';
     } else if (childLevel === 2) {
-      return 'text-xl';
+      return 'text-2xl';
     }
   }
 </script>
 
 <div
   {id}
-  class={cn('mb-8', className)}
+  class={cn('mb-8', childLevel > 1 ? 'pl-8' : '', className)}
   data-section-title={title}
   data-section-id={id}
   data-section-child-level={childLevel === 0 ? undefined : childLevel}

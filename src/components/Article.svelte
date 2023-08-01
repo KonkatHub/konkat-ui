@@ -50,7 +50,7 @@
 </script>
 
 <article class="w-full xl:w-3/4" use:findLinks>
-  <h1 class="text-5xl font-bold">{title}</h1>
+  <h1 class="text-6xl font-bold">{title}</h1>
   {#if description || $$slots.description}
     <p class="mt-4 text-base-content/75">
       <slot name="description">
