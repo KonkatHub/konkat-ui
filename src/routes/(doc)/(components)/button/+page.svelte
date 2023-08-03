@@ -1,54 +1,14 @@
 <script lang="ts">
   import Article from '$components/Article.svelte';
-  import type { LinkInfo } from '$components/TableOfContent/Link.svelte';
   import Button from '$lib/components/button/Button.svelte';
   import Codeblock from '$components/Codeblock.svelte';
   import DocSection from '$components/DocSection.svelte';
 
   export let data;
-
-  const links: LinkInfo[] = [
-    {
-      href: '#themes',
-      text: 'Themes',
-    },
-    {
-      href: '#active',
-      text: 'Active',
-    },
-    {
-      href: '#disabled',
-      text: 'Disabled',
-    },
-    {
-      href: '#variants',
-      text: 'Variants',
-    },
-    {
-      href: '#sizes',
-      text: 'Sizes',
-    },
-    {
-      href: '#shapes',
-      text: 'Shapes',
-    },
-    {
-      href: '#icons',
-      text: 'Icons',
-    },
-    {
-      href: '#element',
-      text: 'Element',
-    },
-    {
-      href: '#events',
-      text: 'Events',
-    },
-  ];
 </script>
 
-<Article title="Button" {links}>
-  <DocSection title="Themes" id="themes">
+<Article title="Button">
+  <DocSection title="Themes">
     <svelte:fragment slot="description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum asperiores
       voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum iusto,
@@ -63,7 +23,7 @@
       <Button theme="destructive">Destructive</Button>
     </Codeblock>
   </DocSection>
-  <DocSection title="Active" id="active">
+  <DocSection title="Active">
     <svelte:fragment slot="description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum asperiores
       voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum iusto,
@@ -78,7 +38,7 @@
       <Button theme="destructive" active>Destructive</Button>
     </Codeblock>
   </DocSection>
-  <DocSection title="Disabled" id="disabled">
+  <DocSection title="Disabled">
     <svelte:fragment slot="description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum asperiores
       voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum iusto,
@@ -93,7 +53,7 @@
       <Button theme="destructive" disabled>Destructive</Button>
     </Codeblock>
   </DocSection>
-  <DocSection title="Variants" id="variants">
+  <DocSection title="Variants">
     <svelte:fragment slot="description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum asperiores
       voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum iusto,
@@ -106,7 +66,7 @@
       <Button variant="link">Link</Button>
     </Codeblock>
   </DocSection>
-  <DocSection title="Sizes" id="sizes">
+  <DocSection title="Sizes">
     <svelte:fragment slot="description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum asperiores
       voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum iusto,
@@ -119,7 +79,7 @@
       <Button size="lg">Large</Button>
     </Codeblock>
   </DocSection>
-  <DocSection title="Shapes" id="shapes">
+  <DocSection title="Shapes">
     <svelte:fragment slot="description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum asperiores
       voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum iusto,
@@ -136,7 +96,7 @@
       </Button>
     </Codeblock>
   </DocSection>
-  <DocSection title="Icons" id="icons">
+  <DocSection title="Icons">
     <svelte:fragment slot="description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum asperiores
       voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum iusto,
@@ -153,7 +113,7 @@
       </Button>
     </Codeblock>
   </DocSection>
-  <DocSection title="Element" id="element">
+  <DocSection title="Element">
     <svelte:fragment slot="description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum asperiores
       voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum iusto,
@@ -166,7 +126,7 @@
       </Button>
     </Codeblock>
   </DocSection>
-  <DocSection title="Events" id="events">
+  <DocSection title="Events">
     <svelte:fragment slot="description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eaque ipsa harum asperiores
       voluptatibus magnam deserunt quidem molestias magni? Nostrum reprehenderit ipsum iusto,

@@ -12,6 +12,6 @@
 
 <ul class={className}>
   {#each links as link}
-    <Link {link} {isNested} {activeId} />
+    <Link {link} {isNested} activeId={isNested ? undefined : activeId} />
   {/each}
 </ul>

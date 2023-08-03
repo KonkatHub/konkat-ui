@@ -3,24 +3,12 @@
   import CodeInline from '$components/CodeInline.svelte';
   import Codeblock from '$components/Codeblock.svelte';
   import DocSection from '$components/DocSection.svelte';
-  import type { LinkInfo } from '$components/TableOfContent/Link.svelte';
 
   export let data;
-
-  const links: LinkInfo[] = [
-    {
-      href: '#theme',
-      text: 'Theme',
-    },
-    {
-      href: '#custom-theme',
-      text: 'Custom theme',
-    },
-  ];
 </script>
 
-<Article title="Customization" {links}>
-  <DocSection title="Theme" id="theme">
+<Article title="Customization">
+  <DocSection title="Theme">
     <svelte:fragment slot="description">
       By default, <CodeInline>Konkat/UI</CodeInline> comes with two themes:
       <ul class="my-2 ml-4 list-disc">
@@ -33,7 +21,7 @@
     </svelte:fragment>
     <Codeblock code={data.theme} language="markup" />
   </DocSection>
-  <DocSection title="Custom theme" id="custom-theme">
+  <DocSection title="Custom theme">
     <svelte:fragment slot="description">
       You can also create your own theme by adding more <CodeInline>CSS</CodeInline> variables to your
       project. You can do this by adding the following line to your
