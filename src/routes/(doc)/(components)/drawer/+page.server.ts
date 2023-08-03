@@ -30,9 +30,21 @@ export const load = async () => {
   </div>
 </Drawer>`;
 
+  const drawerContentComponent = `<Drawer let:states={{ trigger }}>
+  <DrawerContent
+    slot="content"
+    title="Drawer title"
+    description="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+    hideCloseButton
+  >
+    ...
+  </DrawerContent>
+</Drawer>`;
+
   return {
     basicDrawer,
     drawerMainSlot,
     drawerContentSlot,
+    drawerContentComponent,
   };
 };

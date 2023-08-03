@@ -58,8 +58,7 @@
       </slot>
     </p>
   {/if}
-  <hr class="mb-8 mt-6" />
-  <div class="flex flex-col gap-4">
+  <div class="mt-12 flex flex-col gap-4">
     <slot />
   </div>
 </article>

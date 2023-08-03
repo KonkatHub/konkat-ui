@@ -11,7 +11,7 @@
 
 <Article title="Drawer">
   <svelte:fragment slot="description">
-    A drawer provide an effective way to display content that needs to be accessed easily but that
+    A drawer provides an effective way to display content that needs to be accessed easily but that
     is not the main focus of the page
     <br />
     <br />
@@ -78,7 +78,7 @@
       <ul class="my-2">
         <li>
           - <CodeInline>elements</CodeInline>
-          <ul class="mb-6 ml-8 mt-2 list-disc">
+          <ul class="mb-6 ml-8 mt-2 list-disc space-y-1">
             <li>
               <CodeInline>title</CodeInline>: The title of the drawer. Used for accessibility.
             </li>
@@ -90,7 +90,7 @@
         </li>
         <li>
           - <CodeInline>states</CodeInline>
-          <ul class="ml-8 mt-2 list-disc">
+          <ul class="ml-8 mt-2 list-disc space-y-1">
             <li>
               <CodeInline>close</CodeInline>: Assign to a clickable element to <em>close</em> the drawer
               on click.
@@ -107,9 +107,27 @@
   </DocSection>
   <DocSection title="DrawerContent" childLevel={1}>
     <svelte:fragment slot="description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptas optio nemo quas!
-      Officiis commodi illum debitis, magni porro incidunt tempora cupiditate quisquam mollitia iste
-      voluptates, praesentium velit a vel.
+      The <CodeInline>DrawerContent</CodeInline> component is responsible for rendering the title, description,
+      close button and content of the drawer. The <CodeInline>DrawerContent</CodeInline> component should
+      always be rendered inside of the
+      <CodeInline>content</CodeInline> slot of the <CodeInline>Drawer</CodeInline> component.
+      <br />
+      <br />
+      The <CodeInline>DrawerContent</CodeInline> component has 3 properties:
+      <ul class="ml-8 mt-2 list-disc space-y-1">
+        <li>
+          <CodeInline>title</CodeInline>: The title of the drawer. Used for accessibility.
+        </li>
+        <li>
+          <CodeInline>description</CodeInline>: The description of the drawer. Used for
+          accessibility.
+        </li>
+        <li>
+          <CodeInline>hideCloseButton</CodeInline>: A boolean that determines whether or not to hide
+          the close button.
+        </li>
+      </ul>
     </svelte:fragment>
+    <Codeblock code={data.drawerContentComponent} language="svelte" />
   </DocSection>
 </Article>

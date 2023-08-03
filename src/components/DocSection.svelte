@@ -13,20 +13,20 @@
 
   let inView = false;
 
-  function getTitleSize() {
+  function getTitleClasses() {
     if (childLevel === 0) {
-      return 'text-4xl';
+      return 'text-3xl font-bold';
     } else if (childLevel === 1) {
-      return 'text-3xl';
+      return 'text-2xl font-semibold';
     } else if (childLevel === 2) {
-      return 'text-2xl';
+      return 'text-xl font-medium';
     }
   }
 </script>
 
 <div
   {id}
-  class={cn('mb-8', childLevel > 1 ? 'pl-8' : '', className)}
+  class={cn('mb-8', className)}
   data-section-title={title}
   data-section-id={id}
   data-section-child-level={childLevel === 0 ? undefined : childLevel}
@@ -37,11 +37,14 @@
   }}
 >
   <a href="#{id}" class="group" on:click|preventDefault={scrollIntoView}>
-    <h3 class="pointer-events-none relative mb-2 {getTitleSize()}">
+    <h3 class="pointer-events-none relative mb-2 {getTitleClasses()}">
       <span class="absolute -left-6 opacity-0 transition-opacity group-hover:opacity-20">#</span>
       {title}
     </h3>
   </a>
+  {#if childLevel === 0}
+    <hr class="my-2" />
+  {/if}
   <p class="mb-4">
     <slot name="description" />
   </p>
