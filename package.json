@@ -52,7 +52,7 @@
     "svelte": "^4.0.0"
   },
   "devDependencies": {
-    "@melt-ui/pp": "^0.0.6",
+    "@melt-ui/pp": "^0.1.0",
     "@playwright/test": "^1.28.1",
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/kit": "^1.20.4",
@@ -83,7 +83,7 @@
   "type": "module",
   "dependencies": {
     "@konkat/svelte-spy": "^0.0.2",
-    "@melt-ui/svelte": "^0.22.0",
+    "@melt-ui/svelte": "^0.32.0",
     "@sveltejs/adapter-node": "^1.2.4",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",

@@ -1,35 +1,55 @@
-import type { createDialog } from '@melt-ui/svelte';
-import { setContext, getContext } from 'svelte';
+import { createDialog, type Dialog, type CreateDialogProps } from '@melt-ui/svelte';
+import { getContext, setContext } from 'svelte';
 
 export { default as Drawer } from './Drawer.svelte';
 export { default as DrawerContent } from './DrawerContent.svelte';
 
-export type Dialog = ReturnType<typeof createDialog>;
-export type DialogContext = {
-  close: Dialog['close'];
-  title: Dialog['title'];
-  description: Dialog['description'];
+const KEY = Symbol();
+
+export const context = {
+  setDrawerRoot,
+  getDrawer,
+  getDrawerRoot,
+  getDrawerContent,
 };
 
-const key = Symbol();
+function setDrawerRoot(props: CreateDialogProps) {
+  setContext(KEY, createDialog({ ...props }));
 
-export function drawerContext() {
-  function set({ close, title, description }: DialogContext) {
-    setContext<DialogContext>(key, { close, title, description });
-  }
+  const builder = getContext<Dialog>(KEY);
 
-  function get(componentName: string) {
-    const context = getContext<DialogContext | undefined>(key);
-    if (!context) {
-      throw new Error(
-        `Drawer context is undefined. Please use ${componentName} only inside a Drawer component`
-      );
-    }
-    return context;
-  }
-
-  return {
-    set,
-    get,
-  };
+  return builder;
 }
+
+function getDrawer() {
+  return getContext<Dialog>(KEY);
+}
+
+function getDrawerRoot() {
+  const {
+    elements: { content, overlay, portalled, trigger },
+  } = getContext<Dialog>(KEY);
+
+  return { content, overlay, portalled, trigger };
+}
+
+function getDrawerContent() {
+  const {
+    elements: { title, description, close },
+  } = getContext<Dialog>(KEY);
+
+  return { title, description, close };
+}
+
+export type { CreateDialogProps, Dialog };
+export const defaultCreateDialogProps: CreateDialogProps = {
+  role: 'dialog',
+  preventScroll: true,
+  closeOnEscape: true,
+  closeOnOutsideClick: true,
+  portal: 'body',
+  forceVisible: false,
+  defaultOpen: false,
+  open: undefined,
+  onOpenChange: undefined,
+};

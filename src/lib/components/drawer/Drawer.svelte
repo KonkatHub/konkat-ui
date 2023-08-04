@@ -1,69 +1,102 @@
-<script lang="ts" context="module">
-  type OverlayOptions = {
-    class?: string | undefined | null;
-    duration?: number;
-  };
-
-  type DrawerOptions = {
-    class?: string | undefined | null;
-    x?: number;
-    duration?: number;
-    opacity?: number;
-  };
-</script>
-
 <script lang="ts">
-  import { createDialog } from '@melt-ui/svelte';
-  import { fade, fly } from 'svelte/transition';
+  import { melt } from '@melt-ui/svelte';
+  import { context, type CreateDialogProps } from '.';
   import { cn } from '$lib/utils';
-  import { drawerContext } from '.';
+  import { fade, fly } from 'svelte/transition';
 
-  const {
-    trigger,
+  /**
+   * The role attribute of the dialog element.
+   * @default 'dialog'
+   */
+  export let role: CreateDialogProps['role'] = 'dialog';
+
+  /**
+   * Whether or not to prevent scrolling of the document when the dialog is open.
+   * @default true
+   */
+  export let preventScroll: CreateDialogProps['preventScroll'] = true;
+
+  /**
+   * Whether or not to close the dialog when the escape key is pressed.
+   * @default true
+   */
+  export let closeOnEscape: CreateDialogProps['closeOnEscape'] = true;
+
+  /**
+   * Whether or not to close the dialog when the user clicks outside of it.
+   * @default true
+   */
+  export let closeOnOutsideClick: CreateDialogProps['closeOnOutsideClick'] = true;
+
+  /**
+   * The element or selector to render the dialog into. Nested floating elements are automatically
+   * rendered into their parent if not specified.
+   * @default 'body'
+   */
+  export let portal: CreateDialogProps['portal'] = 'body';
+
+  /**
+   * Whether or not to force the dialog to always be visible. This is useful for custom transitions
+   * and animations using conditional blocks.
+   * @default false
+   */
+  export let forceVisible: CreateDialogProps['forceVisible'] = false;
+
+  /**
+   * Whether the dialog is open by default or not.
+   * @default false
+   */
+  export let defaultOpen: CreateDialogProps['defaultOpen'] = false;
+
+  /**
+   * A writable store that controls whether or not the dialog is open
+   * @default undefined
+   * @see [Bring Your Own Store](https://www.melt-ui.com/docs/controlled#bring-your-own-store)
+   */
+  export let open: CreateDialogProps['open'] = undefined;
+
+  /**
+   * A callback called when the value of the open store should be changed.
+   * @default undefined
+   * @see [Change Functions](https://www.melt-ui.com/docs/controlled#change-functions)
+   */
+  export let onOpenChange: CreateDialogProps['onOpenChange'] = undefined;
+
+  context.setDrawerRoot({
+    role,
+    preventScroll,
+    closeOnEscape,
+    closeOnOutsideClick,
     portal,
-    overlay: meltOverlay,
-    content,
-    title,
-    description,
-    close,
+    forceVisible,
+    defaultOpen,
     open,
-  } = createDialog();
+    onOpenChange,
+  });
 
-  export let overlay: OverlayOptions = {};
-  export let drawer: DrawerOptions = {};
-
-  export let isOpen = false;
-
-  const { set } = drawerContext();
-  set({ close, title, description });
-
-  function setOpen(value: boolean) {
-    $open = value;
-  }
-
-  $: $open = isOpen;
+  const { content, overlay, portalled, trigger } = context.getDrawerRoot();
+  const { title, description, close } = context.getDrawerContent();
 </script>
 
-<slot states={{ trigger: $trigger }} />
-<div use:portal>
+<slot elements={{ trigger: $trigger }} />
+<div use:melt={$portalled}>
   {#if $open}
     <div
-      melt={$meltOverlay}
-      class={cn('fixed inset-0 z-20 bg-black/50', overlay.class)}
+      use:melt={$overlay}
+      class={cn('fixed inset-0 z-20 bg-black/50')}
       transition:fade={{
-        duration: overlay.duration ?? 200,
+        duration: 200,
       }}
     />
     <div
-      melt={$content}
+      use:melt={$content}
       class={cn(
-        'fixed left-0 top-0 z-50 h-screen w-full max-w-[350px] bg-background p-4 shadow-lg focus:outline-none',
-        drawer.class
+        'fixed left-0 top-0 z-50 h-screen w-full max-w-[350px] bg-background p-4 shadow-lg focus:outline-none'
       )}
       transition:fly={{
-        x: drawer.x ?? -350,
-        duration: drawer.duration ?? 400,
-        opacity: drawer.opacity ?? 1,
+        x: -350,
+        duration: 400,
+        opacity: 1,
       }}
     >
       <slot
@@ -71,10 +104,7 @@
         elements={{
           title: $title,
           description: $description,
-        }}
-        states={{
           close: $close,
-          setOpen,
         }}
       />
     </div>

@@ -3,6 +3,7 @@
   import { buttonVariants } from './index.js';
   import type { VariantProps } from 'class-variance-authority';
   import { cn, resolveMelted, type Melted } from '$lib/utils.js';
+  import { melt } from '@melt-ui/svelte';
 
   let className: string | undefined | null = undefined;
   export { className as class };
@@ -26,7 +27,7 @@
   {href}
   class={cn(buttonVariants({ theme, variant, shape, size, className }))}
   data-active={active}
-  melt={resolvedMelted}
+  use:melt={resolvedMelted}
   {...$$restProps}
   on:click
   on:change
