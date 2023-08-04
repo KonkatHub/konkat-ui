@@ -1,47 +1,52 @@
 import { createDialog, type Dialog, type CreateDialogProps } from '@melt-ui/svelte';
 import { getContext, setContext } from 'svelte';
 
-export { default as Drawer } from './Drawer.svelte';
-export { default as DrawerContent } from './DrawerContent.svelte';
-
 const KEY = Symbol();
 
-export const context = {
-  setDrawerRoot,
-  getDrawer,
-  getDrawerRoot,
-  getDrawerContent,
-};
-
-function setDrawerRoot(props: CreateDialogProps) {
-  setContext(KEY, createDialog({ ...props }));
-
-  const builder = getContext<Dialog>(KEY);
-
-  return builder;
+function set(props: CreateDialogProps) {
+  const dialog = createDialog({ ...props });
+  setContext(KEY, dialog);
+  return dialog;
 }
 
-function getDrawer() {
+function get() {
   return getContext<Dialog>(KEY);
 }
 
-function getDrawerRoot() {
+function getPortal() {
   const {
-    elements: { content, overlay, portalled, trigger },
+    elements: { portalled },
     states: { open },
-  } = getContext<Dialog>(KEY);
+  } = get();
 
-  return { content, overlay, portalled, trigger, open };
+  return { portal: portalled, open };
 }
 
-function getDrawerContent() {
+function getPanel() {
   const {
-    elements: { title, description, close },
-  } = getContext<Dialog>(KEY);
+    elements: { content, overlay, close },
+  } = get();
 
-  return { title, description, close };
+  return { content, overlay, close };
 }
 
+// Export components
+export { default as Drawer } from './Drawer.svelte';
+export { default as DrawerPortal } from './DrawerPortal.svelte';
+export { default as DrawerPanel } from './DrawerPanel.svelte';
+
+// Export context
+export const ctx = {
+  set,
+  get,
+  getPortal,
+  getPanel,
+  getElements: () => get().elements,
+  getStates: () => get().states,
+  getOptions: () => get().options,
+};
+
+// Export types
 export type { CreateDialogProps, Dialog };
 export const defaultCreateDialogProps: CreateDialogProps = {
   role: 'dialog',

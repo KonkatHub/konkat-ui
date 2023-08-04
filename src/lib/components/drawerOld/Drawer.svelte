@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { ctx, type CreateDialogProps } from '.';
+  import { melt } from '@melt-ui/svelte';
+  import { context, type CreateDialogProps } from '.';
+  import { cn } from '$lib/utils';
+  import { fade, fly } from 'svelte/transition';
 
   /**
    * The role attribute of the dialog element.
@@ -59,9 +62,7 @@
    */
   export let onOpenChange: CreateDialogProps['onOpenChange'] = undefined;
 
-  const {
-    elements: { trigger },
-  } = ctx.set({
+  context.setDrawerRoot({
     role,
     preventScroll,
     closeOnEscape,
@@ -72,6 +73,40 @@
     open,
     onOpenChange,
   });
+
+  const { content, overlay, portalled, trigger, open: openState } = context.getDrawerRoot();
+  const { title, description, close } = context.getDrawerContent();
 </script>
 
-<slot trigger={$trigger} />
+<slot elements={{ trigger: $trigger }} />
+<div use:melt={$portalled}>
+  {#if $openState}
+    <div
+      use:melt={$overlay}
+      class={cn('fixed inset-0 z-20 bg-black/50')}
+      transition:fade={{
+        duration: 200,
+      }}
+    />
+    <div
+      use:melt={$content}
+      class={cn(
+        'fixed left-0 top-0 z-50 h-screen w-full max-w-[350px] bg-background p-4 shadow-lg focus:outline-none'
+      )}
+      transition:fly={{
+        x: -350,
+        duration: 400,
+        opacity: 1,
+      }}
+    >
+      <slot
+        name="content"
+        elements={{
+          title: $title,
+          description: $description,
+          close: $close,
+        }}
+      />
+    </div>
+  {/if}
+</div>
