@@ -7,8 +7,7 @@
 
 <div class="flex h-screen w-screen items-center justify-center gap-2">
   <Drawer let:elements={{ trigger }}>
-    <!-- <Button melted={trigger}>Open Drawer</Button> -->
-    <button use:melt={trigger}>Open Drawer</button>
+    <Button melted={trigger}>Open Drawer</Button>
 
     <DrawerContent slot="content" let:elements={{ title, description, close }}>
       <h3 slot="title" use:melt={title}>Drawer Title</h3>
@@ -16,8 +15,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ab nulla a sed eveniet
         voluptatibus cum nesciunt iste tempora nihil.
       </p>
-      <!-- <Button melted={close}>Close</Button> -->
-      <button use:melt={close} />
+      <Button melted={close}>Close</Button>
     </DrawerContent>
   </Drawer>
 </div>

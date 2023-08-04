@@ -24,18 +24,17 @@
       <CodeInline>DrawerContent</CodeInline> component.
     </svelte:fragment>
     <Codeblock code={data.basicDrawer} language="svelte">
-      <!-- TODO: Replace with new Drawer -->
-      <!-- <Drawer let:states={{ trigger }}>
+      <Drawer let:elements={{ trigger }}>
         <Button melted={trigger}>Open drawer</Button>
         <DrawerContent
           slot="content"
           title="Drawer title"
           description="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
-          let:states={{ close }}
+          let:elements={{ close }}
         >
           <Button melted={close}>Close drawer</Button>
         </DrawerContent>
-      </Drawer> -->
+      </Drawer>
     </Codeblock>
   </DocSection>
   <DocSection title="Components" class="mb-0">

@@ -74,13 +74,13 @@
     onOpenChange,
   });
 
-  const { content, overlay, portalled, trigger } = context.getDrawerRoot();
+  const { content, overlay, portalled, trigger, open: openState } = context.getDrawerRoot();
   const { title, description, close } = context.getDrawerContent();
 </script>
 
 <slot elements={{ trigger: $trigger }} />
 <div use:melt={$portalled}>
-  {#if $open}
+  {#if $openState}
     <div
       use:melt={$overlay}
       class={cn('fixed inset-0 z-20 bg-black/50')}

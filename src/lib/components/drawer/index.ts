@@ -28,9 +28,10 @@ function getDrawer() {
 function getDrawerRoot() {
   const {
     elements: { content, overlay, portalled, trigger },
+    states: { open },
   } = getContext<Dialog>(KEY);
 
-  return { content, overlay, portalled, trigger };
+  return { content, overlay, portalled, trigger, open };
 }
 
 function getDrawerContent() {
