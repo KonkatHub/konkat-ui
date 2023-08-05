@@ -1,77 +1,9 @@
 <script lang="ts">
-  import { ctx, type CreateDialogProps } from '.';
+  import { type CreateDialogProps, setDrawer } from '.';
 
-  /**
-   * The role attribute of the dialog element.
-   * @default 'dialog'
-   */
-  export let role: CreateDialogProps['role'] = 'dialog';
+  type $$Props = CreateDialogProps;
 
-  /**
-   * Whether or not to prevent scrolling of the document when the dialog is open.
-   * @default true
-   */
-  export let preventScroll: CreateDialogProps['preventScroll'] = true;
-
-  /**
-   * Whether or not to close the dialog when the escape key is pressed.
-   * @default true
-   */
-  export let closeOnEscape: CreateDialogProps['closeOnEscape'] = true;
-
-  /**
-   * Whether or not to close the dialog when the user clicks outside of it.
-   * @default true
-   */
-  export let closeOnOutsideClick: CreateDialogProps['closeOnOutsideClick'] = true;
-
-  /**
-   * The element or selector to render the dialog into. Nested floating elements are automatically
-   * rendered into their parent if not specified.
-   * @default 'body'
-   */
-  export let portal: CreateDialogProps['portal'] = 'body';
-
-  /**
-   * Whether or not to force the dialog to always be visible. This is useful for custom transitions
-   * and animations using conditional blocks.
-   * @default false
-   */
-  export let forceVisible: CreateDialogProps['forceVisible'] = false;
-
-  /**
-   * Whether the dialog is open by default or not.
-   * @default false
-   */
-  export let defaultOpen: CreateDialogProps['defaultOpen'] = false;
-
-  /**
-   * A writable store that controls whether or not the dialog is open
-   * @default undefined
-   * @see [Bring Your Own Store](https://www.melt-ui.com/docs/controlled#bring-your-own-store)
-   */
-  export let open: CreateDialogProps['open'] = undefined;
-
-  /**
-   * A callback called when the value of the open store should be changed.
-   * @default undefined
-   * @see [Change Functions](https://www.melt-ui.com/docs/controlled#change-functions)
-   */
-  export let onOpenChange: CreateDialogProps['onOpenChange'] = undefined;
-
-  const {
-    elements: { trigger },
-  } = ctx.set({
-    role,
-    preventScroll,
-    closeOnEscape,
-    closeOnOutsideClick,
-    portal,
-    forceVisible,
-    defaultOpen,
-    open,
-    onOpenChange,
-  });
+  setDrawer({ ...$$props });
 </script>
 
-<slot trigger={$trigger} />
+<slot />

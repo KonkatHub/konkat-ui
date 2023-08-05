@@ -1,8 +1,11 @@
 <script lang="ts">
   import { melt } from '@melt-ui/svelte';
-  import { ctx } from '.';
+  import { getDrawer } from '.';
 
-  const { portal, open } = ctx.getPortal();
+  const {
+    elements: { portalled: portal },
+    states: { open },
+  } = getDrawer();
 </script>
 
 <div use:melt={$portal}>

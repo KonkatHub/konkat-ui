@@ -1,11 +1,21 @@
 <script lang="ts">
-  import Button from '$lib/components/button/Button.svelte';
-  import { Drawer, DrawerPanel } from '$lib/components/drawer/index.js';
+  import {
+    Drawer,
+    DrawerTrigger,
+    DrawerPanel,
+    DrawerHeader,
+    DrawerContent,
+    DrawerFooter,
+  } from '$lib/components/drawer/index.js';
 </script>
 
 <div class="flex h-screen w-screen items-center justify-center gap-2">
-  <Drawer let:trigger>
-    <Button melted={trigger}>Open drawer</Button>
-    <DrawerPanel>hello</DrawerPanel>
+  <Drawer>
+    <DrawerTrigger content="Open drawer" />
+    <DrawerPanel>
+      <DrawerHeader title="My title" description="My description" />
+      <DrawerContent>Content</DrawerContent>
+      <DrawerFooter>Footer</DrawerFooter>
+    </DrawerPanel>
   </Drawer>
 </div>

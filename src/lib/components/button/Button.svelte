@@ -1,23 +1,22 @@
 <script lang="ts">
-  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
-  import { buttonVariants } from './index.js';
-  import type { VariantProps } from 'class-variance-authority';
+  import { buttonVariants, type ButtonProps } from './index.js';
   import { cn, resolveMelted, type Melted } from '$lib/utils.js';
   import { melt } from '@melt-ui/svelte';
 
-  let className: string | undefined | null = undefined;
+  let className: ButtonProps['class'] = undefined;
   export { className as class };
-  export let theme: VariantProps<typeof buttonVariants>['theme'] = undefined;
-  export let variant: VariantProps<typeof buttonVariants>['variant'] = undefined;
-  export let shape: VariantProps<typeof buttonVariants>['shape'] = undefined;
-  export let size: VariantProps<typeof buttonVariants>['size'] = undefined;
-  export let active = false;
+  export let theme: ButtonProps['theme'] = undefined;
+  export let variant: ButtonProps['variant'] = undefined;
+  export let shape: ButtonProps['shape'] = undefined;
+  export let size: ButtonProps['size'] = undefined;
+  export let active: ButtonProps['active'] = false;
+
+  export let type: ButtonProps['type'] = 'button';
+  export let href: ButtonProps['href'] = undefined;
+
   export let melted: Melted | undefined = undefined;
 
   $: resolvedMelted = resolveMelted(melted);
-
-  export let type: HTMLButtonAttributes['type'] = 'button';
-  export let href: HTMLAnchorAttributes['href'] = undefined;
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
