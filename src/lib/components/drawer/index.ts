@@ -1,35 +1,24 @@
-import type { createDialog } from '@melt-ui/svelte';
-import { setContext, getContext } from 'svelte';
+import { createDialog, type Dialog, type CreateDialogProps } from '@melt-ui/svelte';
+import { getContext, setContext } from 'svelte';
+
+const KEY = Symbol();
+
+export function setDrawer(props: CreateDialogProps) {
+  const dialog = createDialog({ ...props });
+  setContext(KEY, dialog);
+  return dialog;
+}
+
+export function getDrawer() {
+  return getContext<Dialog>(KEY);
+}
 
 export { default as Drawer } from './Drawer.svelte';
+export { default as DrawerPortal } from './DrawerPortal.svelte';
+export { default as DrawerPanel } from './DrawerPanel.svelte';
+export { default as DrawerTrigger } from './DrawerTrigger.svelte';
+export { default as DrawerHeader } from './DrawerHeader.svelte';
 export { default as DrawerContent } from './DrawerContent.svelte';
+export { default as DrawerFooter } from './DrawerFooter.svelte';
 
-export type Dialog = ReturnType<typeof createDialog>;
-export type DialogContext = {
-  close: Dialog['close'];
-  title: Dialog['title'];
-  description: Dialog['description'];
-};
-
-const key = Symbol();
-
-export function drawerContext() {
-  function set({ close, title, description }: DialogContext) {
-    setContext<DialogContext>(key, { close, title, description });
-  }
-
-  function get(componentName: string) {
-    const context = getContext<DialogContext | undefined>(key);
-    if (!context) {
-      throw new Error(
-        `Drawer context is undefined. Please use ${componentName} only inside a Drawer component`
-      );
-    }
-    return context;
-  }
-
-  return {
-    set,
-    get,
-  };
-}
+export type { CreateDialogProps, Dialog };

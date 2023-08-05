@@ -1,6 +1,20 @@
-import { cva } from 'class-variance-authority';
+import type { Melted } from '$lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
+import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
 export { default as Button } from './Button.svelte';
+
+export type ButtonProps = {
+  class?: string | undefined | null;
+  theme?: VariantProps<typeof buttonVariants>['theme'];
+  variant?: VariantProps<typeof buttonVariants>['variant'];
+  shape?: VariantProps<typeof buttonVariants>['shape'];
+  size?: VariantProps<typeof buttonVariants>['size'];
+  active?: boolean;
+  type?: HTMLButtonAttributes['type'];
+  href?: HTMLAnchorAttributes['href'];
+  melted?: Melted;
+};
 
 export const buttonVariants = cva(
   [

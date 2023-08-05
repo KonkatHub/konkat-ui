@@ -1,9 +1,8 @@
 <script lang="ts">
   import Button from '$lib/components/button/Button.svelte';
-  import Drawer from '$lib/components/drawer/Drawer.svelte';
-  import DrawerContent from '$lib/components/drawer/DrawerContent.svelte';
   import Sidebar from './Sidebar/Sidebar.svelte';
   import { docSections } from './sections';
+  import { Drawer, DrawerTrigger, DrawerPanel } from '$lib/components/drawer/index.js';
 
   let theme = 'konkat';
 
@@ -17,13 +16,13 @@
   class="sticky top-0 z-10 flex items-center justify-between border-b bg-background px-4 py-4 sm:px-8"
 >
   <div class="flex items-center gap-4">
-    <Drawer let:states={{ trigger }}>
-      <Button variant="ghost" shape="square" melted={trigger} class="lg:hidden">
+    <Drawer>
+      <DrawerTrigger variant="ghost" shape="square" class="lg:hidden">
         <iconify-icon icon="mdi:menu" width="28" height="28" />
-      </Button>
-      <DrawerContent slot="content" hideCloseButton class="gap-0">
+      </DrawerTrigger>
+      <DrawerPanel>
         <Sidebar sections={docSections} />
-      </DrawerContent>
+      </DrawerPanel>
     </Drawer>
     <a href="/" class="text-2xl font-bold">
       <h3>Konkat/UI</h3>
